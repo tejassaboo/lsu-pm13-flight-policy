@@ -106,6 +106,7 @@
       "LOYALTY_PROGRAM_PREFERENCE"
     ],
     "approvers": [
+      "NONE",
       "SUPERVISOR_OR_FISCAL_AUTHORITY"
     ],
     "clauses": [

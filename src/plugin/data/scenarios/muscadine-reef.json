@@ -93,6 +93,7 @@
       "LOWEST_FARE"
     ],
     "approvers": [
+      "NONE",
       "SUPERVISOR_OR_FISCAL_AUTHORITY"
     ],
     "clauses": [

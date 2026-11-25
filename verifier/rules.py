@@ -214,8 +214,9 @@ def solve(trip, offers, hidden):
         # Lines 1183-1188: a candidate's (and the candidate's spouse's) interview travel, authorized in writing.
         booking["clauses"] = by_value([*booking["clauses"], Clause.VISITORS])
         booking["explanation"] += " Lines 1183-1188: interview travel for a candidate, and for the spouse, authorized."
-    # Lines 232-237: every booking relies on the trip's authorization, on file (checked above), so its role is
-    # accepted and NONE ("relies on no one's sign-off") is not.
+    # Lines 232-237: every booking relies on the trip's authorization, already on file (checked above). Its role
+    # is accepted, and so is NONE: with the sign-off already given, "relies on no one's sign-off" reads both ways
+    # (template SYNC_NOTES 4', after the 2026-11-24 re-validation).
     base = [Approver.SUPERVISOR_OR_FISCAL_AUTHORITY]
     if not international:
         if trip.destination_advisory != Advisory.NONE:
@@ -254,8 +255,10 @@ def who_and_why(trip):
 
 
 def relied(approvers):
-    """A booking's accepted approvers: the roles whose sign-offs it relies on, without NONE."""
-    return by_value([role for role in approvers if role != Approver.NONE])
+    """A booking's accepted approvers: the roles whose sign-offs, already on file, it relies on, and NONE beside
+    them (SYNC_NOTES 4'(a'): a BOOK with the needed sign-off on file accepts that role and NONE). A hold that
+    awaits a sign-off never comes through here: it accepts only the awaited roles."""
+    return by_value([*approvers, Approver.NONE])
 
 
 def outside_us(trip, booking, base):

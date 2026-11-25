@@ -95,6 +95,7 @@
       "MEDICAL_NEED"
     ],
     "approvers": [
+      "NONE",
       "SUPERVISOR_OR_FISCAL_AUTHORITY"
     ],
     "clauses": [

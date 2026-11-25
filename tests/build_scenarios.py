@@ -183,9 +183,9 @@ def scenario(id, category, overlays, request, trip_, searches, exp, must_keep, n
     })
 
 
-# Every booking relies on the trip authorization on file (lines 232-237): its role, never NONE (template approver
-# wording after the 2026-11-24 validation).
-BASE = ["SUPERVISOR_OR_FISCAL_AUTHORITY"]
+# Every booking relies on the trip authorization already on file (lines 232-237): its role and NONE are both
+# accepted (template SYNC_NOTES 4', after the 2026-11-24 re-validation). Holds name only the awaited roles.
+BASE = ["NONE", "SUPERVISOR_OR_FISCAL_AUTHORITY"]
 AM_ABROAD = [*BASE, "ENTITY_HEAD_DESIGNEE", "GLOBAL_TRAVEL_DIRECTOR"]
 LOW_CLAUSES = ["AIR", "DEFINITIONS", "TRANSPORTATION_METHODS"]
 ABROAD_CLAUSES = ["INTERNATIONAL_TRAVEL", "DEFINITIONS", "APPENDIX_B"]
@@ -265,7 +265,8 @@ scenario(
 
 scenario(
     "tupelo-wren", "easy", ["outside_air_section"],
-    "I'm presenting at a library science conference in Toronto on Monday, December 14, flying out of Houston. "
+    "I'm presenting at a library science conference in Toronto that opens Tuesday, December 15, and will fly out of "
+    "Houston the day before, Monday, December 14. "
     "Economy is fine. My supervisor and the Global Travel office have both signed off.",
     trip(traveller_name="Hannah Broussard", traveller_title="Librarian, LSU Libraries", origin="IAH",
          destination="YYZ", destination_place="Toronto, Ontario, Canada", travel_date="2026-12-14",
@@ -866,7 +867,8 @@ scenario(
 
 scenario(
     "oriole-batture", "flag", ["outside_air_section", "approval_required"],
-    "I'm presenting at a library science conference in Toronto on Monday, December 14, flying out of Houston. "
+    "I'm presenting at a library science conference in Toronto that opens Tuesday, December 15, and will fly out of "
+    "Houston the day before, Monday, December 14. "
     "Economy is fine. My supervisor has signed my travel authorization.",
     trip(traveller_name="Claire Lavergne", traveller_title="Librarian, LSU Alexandria Library", campus="LSU_ALEXANDRIA",
          origin="IAH", destination="YYZ", destination_place="Toronto, Ontario, Canada", travel_date="2026-12-14",

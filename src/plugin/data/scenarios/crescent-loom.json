@@ -116,6 +116,7 @@
     "approvers": [
       "ENTITY_HEAD_DESIGNEE",
       "GLOBAL_TRAVEL_DIRECTOR",
+      "NONE",
       "SUPERVISOR_OR_FISCAL_AUTHORITY"
     ],
     "clauses": [

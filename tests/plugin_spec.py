@@ -52,7 +52,7 @@ ID_CATEGORY_ENUMS = [contract.TravellerKind, contract.Campus, contract.Purpose, 
 # cheapest seat listed; set to what it passes (see README). The always-flag agent passes the two holds over
 # unclear words (it is given the held offer); the two approval holds need APPROVAL_REQUIRED and the approver.
 MAX_PASS_ALWAYS_FLAG = 2
-MAX_PASS_ALWAYS_LOWEST = 0  # its approver NONE is never accepted on a booking (lines 232-237)
+MAX_PASS_ALWAYS_LOWEST = 14  # NONE is accepted beside the on-file sign-offs on a booking (SYNC_NOTES 4')
 
 # Hand-built duration cases beyond the automatic both-sides tests: (rule, outbound scheduled minutes per
 # flight, layovers, expected True / False). PM-13 measures each segment on its own and never adds segments or

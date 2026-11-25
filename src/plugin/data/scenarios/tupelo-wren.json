@@ -8,7 +8,7 @@
   "twin_fact": "",
   "flag_twins": [],
   "ambiguity_note": "none",
-  "request": "I'm presenting at a library science conference in Toronto on Monday, December 14, flying out of Houston. Economy is fine. My supervisor and the Global Travel office have both signed off.",
+  "request": "I'm presenting at a library science conference in Toronto that opens Tuesday, December 15, and will fly out of Houston the day before, Monday, December 14. Economy is fine. My supervisor and the Global Travel office have both signed off.",
   "trip": {
     "traveller_name": "Hannah Broussard",
     "traveller_kind": "EMPLOYEE",
@@ -106,6 +106,7 @@
     "approvers": [
       "ENTITY_HEAD_DESIGNEE",
       "GLOBAL_TRAVEL_DIRECTOR",
+      "NONE",
       "SUPERVISOR_OR_FISCAL_AUTHORITY"
     ],
     "clauses": [

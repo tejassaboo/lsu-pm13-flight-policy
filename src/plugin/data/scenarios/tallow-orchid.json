@@ -97,6 +97,7 @@
       "REFUNDABLE_FARE_NOT_ALLOWED"
     ],
     "approvers": [
+      "NONE",
       "SUPERVISOR_OR_FISCAL_AUTHORITY"
     ],
     "clauses": [
