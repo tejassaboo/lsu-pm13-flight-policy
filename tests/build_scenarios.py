@@ -489,7 +489,8 @@ scenario(
              "american": {"carrier": "AA", "depart": "21:40", "minutes": [1025]}},
             [offer("qantas-economy", "qantas", "ECONOMY", 120_000), offer("qantas-business", "qantas", "BUSINESS", 138_000),
              offer("american-economy", "american", "ECONOMY", 126_000)], background=0)],
-    expected("BOOK", ["qantas-business"], ["BUSINESS"], ["TRAVELER_PAYS_UPGRADE", "INTERNATIONAL_LONG_FLIGHT"],
+    expected("BOOK", ["qantas-business"], ["BUSINESS"],
+             ["TRAVELER_PAYS_UPGRADE", "INTERNATIONAL_LONG_FLIGHT", "LONG_FLIGHT_APPROVED"],
              AM_ABROAD, ["AIR", "TRANSPORTATION_METHODS", *ABROAD_CLAUSES]),
     [COACH, LONG, *AM_ABROAD_KEEP],
     "Business 138000 is 115% of the 120000 coach fare, over the 110% of lines 423-427. Whether 110% caps the "

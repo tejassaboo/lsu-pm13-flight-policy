@@ -393,8 +393,8 @@ def business(trip, usable, coach, international):
                                                 ReasonCode.UPGRADE_WITHIN_FARE_MARGIN], [Approver.NONE], [Clause.AIR],
                           f"Lines 423-427: an international segment over 600 minutes and {numbers}, within 110%.")
         if pays >= fare - low:
-            return answer(Decision.BOOK, want, [ReasonCode.TRAVELER_PAYS_UPGRADE, ReasonCode.INTERNATIONAL_LONG_FLIGHT],
-                          [Approver.NONE], [Clause.AIR],
+            return answer(Decision.BOOK, want, [ReasonCode.TRAVELER_PAYS_UPGRADE, ReasonCode.INTERNATIONAL_LONG_FLIGHT,
+                                                ReasonCode.LONG_FLIGHT_APPROVED], [Approver.NONE], [Clause.AIR],
                           f"Lines 399-402 and 423-427: {numbers}; the traveller pays all of the difference over "
                           "coach, so business is bought on either reading of the 110% words.")
         if pays * 100 < fare * 100 - COACH_PERCENT * low:

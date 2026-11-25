@@ -108,6 +108,7 @@
     ],
     "reason_codes": [
       "INTERNATIONAL_LONG_FLIGHT",
+      "LONG_FLIGHT_APPROVED",
       "TRAVELER_PAYS_UPGRADE"
     ],
     "approvers": [

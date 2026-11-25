@@ -59,7 +59,7 @@ locally with a raised cap.
 | `sumac-bridge` | boundary_twin | BOOK (united-business; BUSINESS) | INTERNATIONAL_LONG_FLIGHT or LONG_FLIGHT_APPROVED or UPGRADE_WITHIN_FARE_MARGIN | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 423-427, 1072-1074, 1402, 1452-1456) |
 | `willow-pirogue` | boundary_twin | BOOK (swiss-business; BUSINESS) | INTERNATIONAL_LONG_FLIGHT or LONG_FLIGHT_APPROVED or UPGRADE_WITHIN_FARE_MARGIN | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 423-427, 1072-1074, 1402, 1452-1456) |
 | `bramble-quay` | multi_rule | BOOK (aeromexico-economy; ECONOMY) | LOWEST_FARE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or PROVOST or SUPERVISOR_OR_FISCAL_AUTHORITY or VICE_PROVOST | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (95-99, 102-104, 113-115, 399-402, 1072-1074, 1075-1080, 1402, 1444-1447, 1452-1456) |
-| `chicory-anvil` | multi_rule | BOOK (qantas-business; BUSINESS) | INTERNATIONAL_LONG_FLIGHT or TRAVELER_PAYS_UPGRADE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 399-402, 423-427, 1072-1074, 1402, 1452-1456) |
+| `chicory-anvil` | multi_rule | BOOK (qantas-business; BUSINESS) | INTERNATIONAL_LONG_FLIGHT or LONG_FLIGHT_APPROVED or TRAVELER_PAYS_UPGRADE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 399-402, 423-427, 1072-1074, 1402, 1452-1456) |
 | `crescent-loom` | multi_rule | BOOK (korean-economy; ECONOMY) | LOWEST_FARE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 113-115, 369-371, 399-402, 1072-1074, 1402, 1452-1456) |
 | `hickory-spire` | multi_rule | BOOK (aircanada-economy; ECONOMY) | LONG_FLIGHT_CONDITION_NOT_MET or LOWEST_FARE or UPGRADE_NOT_ELIGIBLE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 399-402, 423-427, 1072-1074, 1402, 1452-1456) |
 | `okra-beacon` | multi_rule | BOOK (american-business; BUSINESS) | NO_ECONOMY_SEATS_URGENT | BOOKING_AGENCY or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or TRANSPORTATION_METHODS (369-371, 399-402, 406-408) |
@@ -102,8 +102,9 @@ is more than 10 hours in duration", lines 423-427), strictly over 600 scheduled 
 are never added and layovers never count. Whether the trip is international (definition M, lines 102-104) and
 the segment an international one is decided in `rules.solve`, which raises on combinations no scenario needs (a
 long domestic segment on an international trip, a ticket mixing long and short segments). Background offers:
-three per search domestically, none on international searches or where an arrival deadline makes timing
-matter.
+three per search (the four international economy cases included), none on the ten long-haul business
+requests, where a background routing could cross the 600-minute line, or where an arrival deadline makes
+timing matter (`crescent-loom`, `okra-beacon`).
 
 The world has no Louisiana airport, so travellers leave from Houston (IAH) or from where their trip takes them,
 and inbound visitors fly into Houston; the trip record's `destination_place` names the real place of business.
