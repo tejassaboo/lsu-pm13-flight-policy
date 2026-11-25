@@ -38,9 +38,13 @@ tupelo-wren and tallow-orchid's key) and wrong on the two holds.
 
 No grader defects. No failure needed the lotus-garnet/spartina-kiln Louisiana-airport idea.
 
-A latent risk the run did not hit: `mimosa-cairn` ("presenting at the agricultural economics meeting in
-Phoenix on Thursday, December 10", flying that day) keys the 11:30 departure over a 09:05 one, with no arrival
-deadline. The model got the offer right this time and failed only on the approver, so it is unchanged.
+Review follow-up (same pattern as tupelo-wren, fixed before it costs a run): `mimosa-cairn` said "presenting at
+the agricultural economics meeting in Phoenix on Thursday, December 10" and flies that day, with no arrival
+deadline, while the key takes the 11:30 departure ($699 business) over the 09:05 one ($718). A reader may take the
+09:05 as the lowest logical fare "without causing undo inconvenience" (lines 113-114) for a same-day presentation.
+The model chose the keyed offer this time, so this is preventive. The request now says the meeting "opens Friday,
+December 11" and the traveller flies "the day before, Thursday, December 10". Same flights, fares, approvals and
+answer; the id is kept.
 
 ## Files changed
 
@@ -52,7 +56,7 @@ deadline. The model got the offer right this time and failed only on the approve
   chicory-anvil, crescent-loom, cypress-ibis, egret-sorghum, heron-cane, hickory-spire, indigo-pelican,
   lotus-garnet, magnolia-levee, mimosa-cairn, muscadine-reef, okra-beacon, palmetto-gale, pecan-marsh,
   pinecone-atlas, sassafras-dune, sorrel-harbor, sumac-bridge, tallow-orchid, tupelo-wren and willow-pirogue.
-  The request was reworded in tupelo-wren and oriole-batture.
+  The request was reworded in tupelo-wren, oriole-batture and mimosa-cairn.
 
 World facts are unchanged. `world_diff.py --plugins` against HEAD shows no pinned-search differences; only the
 trip (request) of the two reworded cases differs, plus the 25 answer keys that gained `NONE`.

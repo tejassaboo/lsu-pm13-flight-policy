@@ -627,9 +627,9 @@ scenario(
 
 scenario(
     "mimosa-cairn", "hidden_clause", ["synonym"],
-    "I'm a grad student presenting at the agricultural economics meeting in Phoenix on Thursday, December 10. My "
-    "accommodation letter from the campus disability office says I need a seat with more room to lie back, so "
-    "could you book the front cabin?",
+    "I'm a grad student presenting at the agricultural economics meeting in Phoenix that opens Friday, December 11, "
+    "and will fly out of Houston the day before, Thursday, December 10. My accommodation letter from the campus "
+    "disability office says I need a seat with more room to lie back, so could you book the front cabin?",
     trip(traveller_name="Tyler Comeaux", traveller_kind="STUDENT",
          traveller_title="Graduate Assistant, Agricultural Economics", origin="IAH", destination="PHX",
          destination_place="Phoenix, Arizona", travel_date="2026-12-10", booking_date="2026-11-24",
