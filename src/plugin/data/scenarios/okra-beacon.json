@@ -1,0 +1,178 @@
+{
+  "id": "okra-beacon",
+  "category": "multi_rule",
+  "overlays": [
+    "dearer_option",
+    "date_arithmetic"
+  ],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm testifying at a congressional committee hearing in Washington at 2 p.m. on Thursday, December 3, and must land at Reagan National by noon that day. Economy please, flying out of Houston that morning.",
+  "trip": {
+    "traveller_name": "Joseph Fontenot",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Professor, Coastal Ecology",
+    "campus": "LSU_A_AND_M",
+    "origin": "IAH",
+    "destination": "DCA",
+    "destination_place": "Washington, District of Columbia",
+    "travel_date": "2026-12-03",
+    "return_date": "",
+    "booking_date": "2026-11-30",
+    "purpose": "Testimony at a congressional committee hearing",
+    "purpose_kind": "MEETING",
+    "latest_arrival_local": "2026-12-03 12:00",
+    "requested_cabin": "ECONOMY",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Joseph Fontenot",
+        "signed_on": "2026-11-27"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "IAH",
+        "destination": "DCA",
+        "date": "2026-12-03",
+        "return_date": "",
+        "flights": {
+          "american": {
+            "carrier": "AA",
+            "depart": "06:30",
+            "minutes": [
+              175
+            ]
+          },
+          "united": {
+            "carrier": "UA",
+            "depart": "07:15",
+            "minutes": [
+              175
+            ]
+          },
+          "afternoon": {
+            "carrier": "UA",
+            "depart": "13:40",
+            "minutes": [
+              175
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "american-economy",
+            "flight": "american",
+            "cabin": "ECONOMY",
+            "fare_cents": 31500,
+            "seats": false
+          },
+          {
+            "slot": "american-business",
+            "flight": "american",
+            "cabin": "BUSINESS",
+            "fare_cents": 74500
+          },
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 30900,
+            "seats": false
+          },
+          {
+            "slot": "united-business",
+            "flight": "united",
+            "cabin": "BUSINESS",
+            "fare_cents": 79800
+          },
+          {
+            "slot": "afternoon-economy",
+            "flight": "afternoon",
+            "cabin": "ECONOMY",
+            "fare_cents": 29800
+          }
+        ],
+        "background": 0
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "american-business"
+    ],
+    "cabins": [
+      "BUSINESS"
+    ],
+    "reason_codes": [
+      "NO_ECONOMY_SEATS_URGENT"
+    ],
+    "approvers": [
+      "BOOKING_AGENCY",
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        406,
+        408
+      ],
+      "sha256": "aa7c8fb0115a934f0dde5093ce461ccd353437a076684a7ec29e03a66c3f77b1",
+      "quote": "If space is not available in less than first or business class air accommodations in time to carry out the purpose of the travel, the traveler will secure a certification from the booking agency indicating this fact.",
+      "why": "no seat below business in time: business, with the agency's certification"
+    },
+    {
+      "lines": [
+        369,
+        371
+      ],
+      "sha256": "406fe7717c6d5b3ba15494a8b78c5e9902d923a25e9c969061c3a9cd594db6ff",
+      "quote": "The most cost-effective method of transportation that will accomplish the purpose of the travel shall be selected.",
+      "why": "the ticket must accomplish the purpose of the travel"
+    },
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        407,
+        408
+      ],
+      "quote": "The certification is required for travel reimbursement.",
+      "why": "the certification is the traveller's paperwork for reimbursement, not a sign-off before buying"
+    }
+  ],
+  "design_notes": "Both flights that land by noon (10:25 and 11:10 local) have economy sold out; the afternoon economy seat lands at 17:35 local, too late. No seat below business is available in time to carry out the purpose (lines 406-408): the cheapest business seat that lands in time."
+}

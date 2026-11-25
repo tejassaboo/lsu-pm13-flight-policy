@@ -1,0 +1,173 @@
+{
+  "id": "pinecone-atlas",
+  "category": "distractor",
+  "overlays": [
+    "multi_leg",
+    "outside_air_section"
+  ],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Round trip to Boston, out Monday, February 8, back Thursday, February 11, for the NSF panel. I found the same United flights for $785 on the airline's own website. The agency wants $980 plus its $45 fee, so booking direct saves $240. Please buy it there, or tell me how to get the exemption.",
+  "trip": {
+    "traveller_name": "Kevin Hebert",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Associate Professor, Computer Science",
+    "campus": "LSU_A_AND_M",
+    "origin": "IAH",
+    "destination": "BOS",
+    "destination_place": "Boston, Massachusetts",
+    "travel_date": "2027-02-08",
+    "return_date": "2027-02-11",
+    "booking_date": "2026-12-09",
+    "purpose": "NSF review panel",
+    "purpose_kind": "MEETING",
+    "latest_arrival_local": "",
+    "requested_cabin": "ECONOMY",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 78500,
+    "agency_fee_cents": 4500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Kevin Hebert",
+        "signed_on": "2026-12-07"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "IAH",
+        "destination": "BOS",
+        "date": "2027-02-08",
+        "return_date": "2027-02-11",
+        "flights": {
+          "united": {
+            "carrier": "UA",
+            "depart": "07:40",
+            "return": {
+              "depart": "17:10"
+            }
+          },
+          "delta": {
+            "carrier": "DL",
+            "depart": "09:55",
+            "return": {
+              "depart": "15:30"
+            }
+          },
+          "jetblue": {
+            "carrier": "B6",
+            "depart": "12:20",
+            "return": {
+              "depart": "19:45"
+            }
+          }
+        },
+        "offers": [
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 98000
+          },
+          {
+            "slot": "delta-economy",
+            "flight": "delta",
+            "cabin": "ECONOMY",
+            "fare_cents": 101500
+          },
+          {
+            "slot": "jetblue-economy",
+            "flight": "jetblue",
+            "cabin": "ECONOMY",
+            "fare_cents": 99900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "united-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "AGENCY_EXEMPTION_NOT_MET",
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "CONTRACT_TRAVEL_SERVICES",
+      "DEFINITIONS",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        198,
+        201
+      ],
+      "sha256": "2e2f5bee1b24d9afc706c6f4bcedfed5f245933d19af6e578d723d347eda57b7",
+      "quote": "The contracted travel agency is mandatory for booking airfare unless exemptions have been granted prior to travel. Requests for an exemption must document that the traveler saved 10% and experienced cost savings amounting to at least $200, not including the travel agency service fee.",
+      "why": "the agency is mandatory; an exemption needs both tests, fee excluded"
+    },
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    },
+    {
+      "lines": [
+        113,
+        115
+      ],
+      "sha256": "1bbb942cb3c6255fe766d7e74dd9a506c0497ee2df94347c67a78b551ecaf259",
+      "quote": "The lowest logical airfare is the cheapest available at the time of booking without causing undo inconvenience. These types of airfares are non-refundable, penalty tickets.",
+      "why": "definition P: the lowest logical airfare, non-refundable"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        1147,
+        1149
+      ],
+      "quote": "International airfares available from other sources may be less expensive than fares available from the contracted travel agency.",
+      "why": "the international procedure, not this domestic trip"
+    },
+    {
+      "lines": [
+        394,
+        397
+      ],
+      "quote": "While University guests and state contractors are not required to use the state's contracted travel agency when purchasing airfare",
+      "why": "guests may buy elsewhere; this traveller is an employee"
+    }
+  ],
+  "design_notes": "An exemption needs a 10% saving and at least $200 \"not including the travel agency service fee\" (lines 198-201). The saving is 98000 - 78500 = 19500 cents (19.9%): under $200 once the fee is left out (the traveller's $240 counts the fee). The agency is mandatory: book its lowest round trip."
+}

@@ -1,0 +1,177 @@
+{
+  "id": "cattail-ember",
+  "category": "flag",
+  "overlays": [
+    "unclear_phrase"
+  ],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [
+    "pecan-marsh",
+    "bayou-lantern"
+  ],
+  "ambiguity_note": {
+    "phrase": "preferred seat",
+    "readings": [
+      "a premium economy seat is a preferred seat (a seat bought at additional cost for more legroom), reimbursed with the supervisor's approval up to the lesser of 10% of the airfare or $100",
+      "premium economy is a higher class than coach, so it is an upgrade the University does not pay; the preferred-seat rule covers seat fees within the same class"
+    ]
+  },
+  "request": "Could you book me premium economy on the American flight to Charlotte on Tuesday, December 15? My supervisor has approved a preferred seat for this trip. I'd rather not pay anything extra myself.",
+  "trip": {
+    "traveller_name": "Angela Mire",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Associate Director, Student Financial Aid",
+    "campus": "LSU_A_AND_M",
+    "origin": "IAH",
+    "destination": "CLT",
+    "destination_place": "Charlotte, North Carolina",
+    "travel_date": "2026-12-15",
+    "return_date": "",
+    "booking_date": "2026-12-10",
+    "purpose": "Regional financial aid administrators' meeting",
+    "purpose_kind": "MEETING",
+    "latest_arrival_local": "",
+    "requested_cabin": "PREMIUM_ECONOMY",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Angela Mire",
+        "signed_on": "2026-12-08"
+      },
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "PREFERRED_SEAT",
+        "traveller": "Angela Mire",
+        "signed_on": "2026-12-08"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "IAH",
+        "destination": "CLT",
+        "date": "2026-12-15",
+        "return_date": "",
+        "flights": {
+          "american": {
+            "carrier": "AA",
+            "depart": "07:40"
+          },
+          "united": {
+            "carrier": "UA",
+            "depart": "10:25"
+          }
+        },
+        "offers": [
+          {
+            "slot": "american-economy",
+            "flight": "american",
+            "cabin": "ECONOMY",
+            "fare_cents": 64000
+          },
+          {
+            "slot": "american-premium",
+            "flight": "american",
+            "cabin": "PREMIUM_ECONOMY",
+            "fare_cents": 69500
+          },
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 66500
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "FLAG_FOR_APPROVAL",
+    "offer_slots": [
+      "american-economy",
+      "american-premium"
+    ],
+    "cabins": [
+      "ECONOMY",
+      "PREMIUM_ECONOMY"
+    ],
+    "reason_codes": [
+      "UNCLEAR_POLICY_TEXT"
+    ],
+    "approvers": [
+      "NOT_NAMED",
+      "PRESIDENT_OR_DESIGNEE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "DEFINITIONS",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": "preferred seat"
+  },
+  "must_keep": [
+    {
+      "lines": [
+        157,
+        159
+      ],
+      "sha256": "d95e20c3df86054d4c0b7c5ecd235a011e73cb11d376be111522ed764a407a38",
+      "quote": "V. Preferred Seating - Seats for purchase on an aircraft at an additional cost. Some of the benefits preferred seating may provide are more legroom, priority boarding and/or early access to overhead bins.",
+      "why": "definition V: preferred seating, seats bought at extra cost, e.g. more legroom"
+    },
+    {
+      "lines": [
+        429,
+        433
+      ],
+      "sha256": "303aa9ebb5a65ae90a24c7432f497143a7ef6fbf8dea152dcc41cfd027f894a6",
+      "quote": "When in the best interest of the University, the supervisor (or his/her designee) or the person with fiscal responsibility unless the Campus and/or Department requires a higher level of approval may approve reimbursement of the purchase of a preferred seat. The fee for the preferred seat will be reimbursed at the lesser of 10% of the airfare or up to $100.",
+      "why": "a preferred seat, approved by the supervisor, at the lesser of 10% of the airfare or $100"
+    },
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    },
+    {
+      "lines": [
+        402,
+        406
+      ],
+      "sha256": "166e8852ae00fb73104819576be6f9fefcbb36112f83a45c6ebd270c84153cab",
+      "quote": "Upgrades at the expense of the University are not permitted unless there is a medical accommodation on file with the Office of Civil Rights & Title IX for employees, Office of the Dean of Students Disability Services for students, or documentation from the contracted travel agency indicating the higher-class ticket is the lowest priced airfare available.",
+      "why": "no upgrade at University expense, with three exceptions"
+    },
+    {
+      "lines": [
+        43,
+        44
+      ],
+      "sha256": "dc2b09b2640a6362922262e15f4de0989d709015ec3448cd3a83fd895401988f",
+      "quote": "This permanent memorandum allows for discretion or exceptions approved by the President of the University or his/her designee.",
+      "why": "who may settle a discretionary question"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Premium economy is 5500 cents above coach on the same flight (8.6%, under both 10% of the airfare and $100), and a preferred-seat approval is on file. If a premium economy seat is a \"preferred seat\" (definition V: a seat bought at extra cost, e.g. for legroom), the University reimburses it (lines 429-433); if it is a higher class, it is an upgrade at University expense, not permitted (lines 399-405). Hold."
+}

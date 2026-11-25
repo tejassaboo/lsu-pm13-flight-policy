@@ -1,0 +1,13 @@
+_ > nanoagent.plugin.v0001.ProductConfig:
+tagline: "One flight request, a university system's real travel regulations: book it, refuse it, or hold it for sign-off"
+summary: "An agent handles one traveller's flight request under LSU System Permanent Memorandum 13 (PM-13), University Travel, read verbatim. It reads the trip record, searches a simulated flight world (real airports and airlines, synthetic schedules and fares) and submits a decision with the offer, cabin, reason, approver and section. A deterministic verifier rebuilds the offers and the regulations' answer itself and checks every field. Thirty-two cases cover segment minutes on both sides of the long-flight limit, the business fare against coach to the cent, Hawaii against Tokyo, approvals from the campus table in the appendix, candidates' and employees' spouses, personal destinations, and the text's own unclear words."
+highlights:
+  - "The verbatim regulations (17,762 words): no paraphrase, no rules restated in the task"
+  - "Exact boundaries: 600 against 601 segment minutes, 110.00% against 110.07% of coach"
+  - "Rules that live in definitions and the campus approval tables, far from the air section"
+  - "Fully offline: a hash-seeded flight world with unguessable offer ids"
+steps:
+  - "Name a case, for example cypress-ibis, with the traveller's request"
+  - "The agent reads the trip record and searches flights on the trip's route and date"
+  - "It submits BOOK, REFUSE or FLAG_FOR_APPROVAL with the offer, cabin, reason, approver and section"
+  - "The verifier recomputes the regulations' answer and checks every field"

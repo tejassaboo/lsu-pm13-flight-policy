@@ -1,0 +1,169 @@
+{
+  "id": "pecan-marsh",
+  "category": "easy",
+  "overlays": [
+    "upgrade_not_taken"
+  ],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Could you put me in premium economy for the extra legroom on my Boston trip on Wednesday, December 9? If the University won't cover it as things stand, regular economy is fine. I'm not paying extra myself.",
+  "trip": {
+    "traveller_name": "Luc Hebert",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Program Coordinator, Continuing Education",
+    "campus": "LSU_A_AND_M",
+    "origin": "IAH",
+    "destination": "BOS",
+    "destination_place": "Boston, Massachusetts",
+    "travel_date": "2026-12-09",
+    "return_date": "",
+    "booking_date": "2026-11-25",
+    "purpose": "Planning meeting with a partner university",
+    "purpose_kind": "MEETING",
+    "latest_arrival_local": "",
+    "requested_cabin": "PREMIUM_ECONOMY",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Luc Hebert",
+        "signed_on": "2026-11-23"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "IAH",
+        "destination": "BOS",
+        "date": "2026-12-09",
+        "return_date": "",
+        "flights": {
+          "united": {
+            "carrier": "UA",
+            "depart": "08:20"
+          },
+          "delta": {
+            "carrier": "DL",
+            "depart": "10:05"
+          },
+          "jetblue": {
+            "carrier": "B6",
+            "depart": "13:40"
+          }
+        },
+        "offers": [
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 33850
+          },
+          {
+            "slot": "united-premium",
+            "flight": "united",
+            "cabin": "PREMIUM_ECONOMY",
+            "fare_cents": 41200
+          },
+          {
+            "slot": "delta-economy",
+            "flight": "delta",
+            "cabin": "ECONOMY",
+            "fare_cents": 35100
+          },
+          {
+            "slot": "jetblue-economy",
+            "flight": "jetblue",
+            "cabin": "ECONOMY",
+            "fare_cents": 34500
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "united-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE",
+      "UPGRADE_NOT_ELIGIBLE"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "DEFINITIONS",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    },
+    {
+      "lines": [
+        402,
+        406
+      ],
+      "sha256": "166e8852ae00fb73104819576be6f9fefcbb36112f83a45c6ebd270c84153cab",
+      "quote": "Upgrades at the expense of the University are not permitted unless there is a medical accommodation on file with the Office of Civil Rights & Title IX for employees, Office of the Dean of Students Disability Services for students, or documentation from the contracted travel agency indicating the higher-class ticket is the lowest priced airfare available.",
+      "why": "no upgrade at University expense, with three exceptions"
+    },
+    {
+      "lines": [
+        157,
+        159
+      ],
+      "sha256": "d95e20c3df86054d4c0b7c5ecd235a011e73cb11d376be111522ed764a407a38",
+      "quote": "V. Preferred Seating - Seats for purchase on an aircraft at an additional cost. Some of the benefits preferred seating may provide are more legroom, priority boarding and/or early access to overhead bins.",
+      "why": "definition V: preferred seating, seats bought at extra cost, e.g. more legroom"
+    },
+    {
+      "lines": [
+        429,
+        433
+      ],
+      "sha256": "303aa9ebb5a65ae90a24c7432f497143a7ef6fbf8dea152dcc41cfd027f894a6",
+      "quote": "When in the best interest of the University, the supervisor (or his/her designee) or the person with fiscal responsibility unless the Campus and/or Department requires a higher level of approval may approve reimbursement of the purchase of a preferred seat. The fee for the preferred seat will be reimbursed at the lesser of 10% of the airfare or up to $100.",
+      "why": "a preferred seat, approved by the supervisor, at the lesser of 10% of the airfare or $100"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        414,
+        418
+      ],
+      "quote": "If a lowest logical priced ticket is purchased and the traveler's schedule changes resulting in a penalty and additional cost to change the ticket, the University will reimburse the penalty incurred when the change or cancellation is required by the University",
+      "why": "a change the University requires is paid as a penalty: no reason to buy a refundable fare"
+    }
+  ],
+  "design_notes": "Premium economy costs 7350 cents more. The traveller pays nothing and no preferred-seat approval is on file, so on either reading of premium economy (a higher class, lines 399-405, or a preferred seat, lines 157-159 and 429-433, which needs the supervisor's approval) the University buys coach. Clear twin of cattail-ember."
+}

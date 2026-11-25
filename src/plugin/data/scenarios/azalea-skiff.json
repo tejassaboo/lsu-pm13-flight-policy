@@ -1,0 +1,147 @@
+{
+  "id": "azalea-skiff",
+  "category": "boundary_twin",
+  "overlays": [
+    "upgrade_not_taken",
+    "outside_air_section"
+  ],
+  "twin_of": "sumac-bridge",
+  "twin_fact": "destination Honolulu, Hawaii (inside the 50 states) or Tokyo (international); same 705-minute United nonstop and fares",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm in New York this week for a workshop and fly straight on to Honolulu on Friday, December 11, for the Pacific fisheries council meeting. The nonstop from Newark is almost twelve hours, so business class please if the University covers it; I'm not paying for it myself.",
+  "trip": {
+    "traveller_name": "Andre Thibodeaux",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Professor, Renewable Natural Resources",
+    "campus": "LSU_A_AND_M",
+    "origin": "EWR",
+    "destination": "HNL",
+    "destination_place": "Honolulu, Hawaii",
+    "travel_date": "2026-12-11",
+    "return_date": "",
+    "booking_date": "2026-11-30",
+    "purpose": "Pacific fisheries council meeting",
+    "purpose_kind": "MEETING",
+    "latest_arrival_local": "",
+    "requested_cabin": "BUSINESS",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Andre Thibodeaux",
+        "signed_on": "2026-11-24"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "EWR",
+        "destination": "HNL",
+        "date": "2026-12-11",
+        "return_date": "",
+        "flights": {
+          "united": {
+            "carrier": "UA",
+            "depart": "09:30",
+            "minutes": [
+              705
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 105000
+          },
+          {
+            "slot": "united-business",
+            "flight": "united",
+            "cabin": "BUSINESS",
+            "fare_cents": 114000
+          }
+        ],
+        "background": 0
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "united-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "DOMESTIC_TRAVEL_COACH",
+      "LONG_FLIGHT_CONDITION_NOT_MET",
+      "LOWEST_FARE",
+      "UPGRADE_NOT_ELIGIBLE"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "DEFINITIONS",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    },
+    {
+      "lines": [
+        423,
+        427
+      ],
+      "sha256": "d78bbf5d66f89cef518dff4890bb7110d125ebaf00d8f12e0905237ef5a8b6e0",
+      "quote": "c. For international travel only, when an international flight segment is more than 10 hours in duration, the University will allow the business class rate, not to exceed 110% of the coach rate. The traveler's itinerary provided by the travel agency must document the flight segment as more than 10 hours and must be attached to the Travel Expense Reimbursement Request/Expense Report.",
+      "why": "international travel only: a segment over 10 hours allows the business rate up to 110% of coach; segments are measured one by one"
+    },
+    {
+      "lines": [
+        102,
+        104
+      ],
+      "sha256": "7c8cb32e9896b6a38808cffcff8235ceb9c25c67b7883a683d2f5f36864beed8",
+      "quote": "M. International Travel - All travel to destinations outside the 50 United States, District of Columbia, Puerto Rico, U.S. Virgin Islands, American Samoa, Guam and Saipan. Entity Head (or designee) approval is required for international travel, as defined in PM-13.",
+      "why": "definition M: international travel is travel outside the 50 states, DC and the listed territories, and needs Entity Head (or designee) approval"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        92,
+        94
+      ],
+      "quote": "The GSA rates apply to the 48 continental United States, including District of Columbia.",
+      "why": "a per diem scope line; it does not define international travel"
+    }
+  ],
+  "design_notes": "Hawaii is one of the 50 United States, so this is not international travel (definition M, lines 102-104) and the 10-hour rule (\"For international travel only\", line 423) does not apply despite the 705-minute segment: coach (lines 399-402)."
+}

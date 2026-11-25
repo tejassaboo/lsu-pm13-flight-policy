@@ -1,0 +1,16 @@
+{
+  "id": "lsu-pm13-flight-policy",
+  "name": "LSU PM-13 Flight Policy",
+  "slug": "lsu-pm13",
+  "title": "LSU System Permanent Memorandum 13 (PM-13), University Travel, last revised July 2, 2026 (Appendix I effective October 1, 2026)",
+  "frozen_file": "lsu-pm13_policy.txt",
+  "sha256": "8f5a1a4049e0c6d29a8470630f707d0402e61ff09e56d8498e1051dc8ae2d765",
+  "raw_pdf_sha256": "db678e1594c0fd45a5ad6df245a2592e3605bce7608071a6097ee08651bcaede",
+  "words": 17762,
+  "lines": 1891,
+  "source": "https://www.lsu.edu/administration/policies/pmfiles/pm-13.pdf",
+  "frozen_on": "2026-11-24",
+  "scenario_count": 32,
+  "currency": "USD",
+  "background_offers": 3
+}

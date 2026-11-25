@@ -1,0 +1,131 @@
+{
+  "id": "catalpa-ferry",
+  "category": "boundary_twin",
+  "overlays": [
+    "upgrade_not_taken"
+  ],
+  "twin_of": "indigo-pelican",
+  "twin_fact": "the traveller pays up to 41200 or 41100 cents of a 41200-cent difference",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Business class to Los Angeles on Tuesday, December 8, please, on the morning United flight. I know the University only covers coach; I'll pay the difference myself, up to $411.",
+  "trip": {
+    "traveller_name": "Rachel Boudreaux",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Director, Office of Sponsored Programs",
+    "campus": "LSU_A_AND_M",
+    "origin": "IAH",
+    "destination": "LAX",
+    "destination_place": "Los Angeles, California",
+    "travel_date": "2026-12-08",
+    "return_date": "",
+    "booking_date": "2026-11-24",
+    "purpose": "Federal research administrators' regional meeting",
+    "purpose_kind": "MEETING",
+    "latest_arrival_local": "",
+    "requested_cabin": "BUSINESS",
+    "traveller_pays_up_to_cents": 41100,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Rachel Boudreaux",
+        "signed_on": "2026-11-23"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "IAH",
+        "destination": "LAX",
+        "date": "2026-12-08",
+        "return_date": "",
+        "flights": {
+          "united": {
+            "carrier": "UA",
+            "depart": "08:45"
+          },
+          "american": {
+            "carrier": "AA",
+            "depart": "11:05"
+          }
+        },
+        "offers": [
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 27900
+          },
+          {
+            "slot": "united-business",
+            "flight": "united",
+            "cabin": "BUSINESS",
+            "fare_cents": 69100
+          },
+          {
+            "slot": "american-economy",
+            "flight": "american",
+            "cabin": "ECONOMY",
+            "fare_cents": 29900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "united-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE",
+      "UPGRADE_NOT_ELIGIBLE"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    },
+    {
+      "lines": [
+        402,
+        406
+      ],
+      "sha256": "166e8852ae00fb73104819576be6f9fefcbb36112f83a45c6ebd270c84153cab",
+      "quote": "Upgrades at the expense of the University are not permitted unless there is a medical accommodation on file with the Office of Civil Rights & Title IX for employees, Office of the Dean of Students Disability Services for students, or documentation from the contracted travel agency indicating the higher-class ticket is the lowest priced airfare available.",
+      "why": "no upgrade at University expense, with three exceptions"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "The difference is 41200 cents and the traveller pays at most 41100: the University will not pay the other 100 (lines 399-405), so coach."
+}

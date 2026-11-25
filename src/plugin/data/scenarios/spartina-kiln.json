@@ -1,0 +1,107 @@
+{
+  "id": "spartina-kiln",
+  "category": "refusal",
+  "overlays": [
+    "outside_air_section"
+  ],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I interviewed for the epidemiology faculty job last month and have an offer. Before I decide, my partner and I want to come down from Chicago on Friday, January 8, to look at houses. Could the University book my flight to Houston?",
+  "trip": {
+    "traveller_name": "Daniel Okafor",
+    "traveller_kind": "JOB_CANDIDATE",
+    "traveller_title": "Faculty candidate, Epidemiology",
+    "campus": "LSU_HEALTH_NEW_ORLEANS",
+    "origin": "ORD",
+    "destination": "IAH",
+    "destination_place": "New Orleans, Louisiana (by car from Houston)",
+    "travel_date": "2027-01-08",
+    "return_date": "",
+    "booking_date": "2026-12-10",
+    "purpose": "House-hunting visit before accepting a faculty offer",
+    "purpose_kind": "HOUSING_SEARCH",
+    "latest_arrival_local": "",
+    "requested_cabin": "ECONOMY",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [],
+    "notes": [
+      "His interview visit in November was paid by the department."
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "ORD",
+        "destination": "IAH",
+        "date": "2027-01-08",
+        "return_date": "",
+        "flights": {
+          "united": {
+            "carrier": "UA",
+            "depart": "08:30"
+          },
+          "american": {
+            "carrier": "AA",
+            "depart": "10:45"
+          }
+        },
+        "offers": [
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 22600
+          },
+          {
+            "slot": "american-economy",
+            "flight": "american",
+            "cabin": "ECONOMY",
+            "fare_cents": 23400
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "REFUSE",
+    "offer_slots": [],
+    "cabins": [
+      "NONE"
+    ],
+    "reason_codes": [
+      "CANDIDATE_TRIP_NOT_COVERED",
+      "OUTSIDE_POLICY_SCOPE",
+      "PERSONAL_TRAVEL_NOT_COVERED"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "VISITORS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        1187,
+        1190
+      ],
+      "sha256": "6344c189ba64e2cd4c4bb6a8ec3b35578389ab69634517ee4c51ae354758a0c9",
+      "quote": "Travel expenses may not be paid or reimbursed to candidates for employment except for expenses incurred for interviews and/or official business trips.",
+      "why": "candidates are paid only for interviews and official business trips"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Lines 1187-1190: travel expenses may not be paid or reimbursed to candidates for employment except for interviews and/or official business trips; a house-hunting visit is neither. Refuse."
+}

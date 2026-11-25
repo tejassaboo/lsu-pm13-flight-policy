@@ -1,0 +1,134 @@
+{
+  "id": "nutria-prism",
+  "category": "refusal",
+  "overlays": [
+    "personal_travel"
+  ],
+  "twin_of": "muscadine-reef",
+  "twin_fact": "personal days in Denver, the business destination, or a ticket on to Las Vegas, a personal destination",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "After the soil science meeting in Denver ends on Thursday, December 10, I'm flying on to Las Vegas for a few personal days and will fly home from there. Could you book the Denver to Las Vegas flight on Friday, December 11?",
+  "trip": {
+    "traveller_name": "Marcus Guidry",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Associate Professor, Agronomy",
+    "campus": "LSU_A_AND_M",
+    "origin": "DEN",
+    "destination": "LAS",
+    "destination_place": "Las Vegas, Nevada",
+    "travel_date": "2026-12-11",
+    "return_date": "",
+    "booking_date": "2026-11-24",
+    "purpose": "Personal days in Las Vegas after a soil science society meeting",
+    "purpose_kind": "PERSONAL",
+    "latest_arrival_local": "",
+    "requested_cabin": "ECONOMY",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Marcus Guidry",
+        "signed_on": "2026-11-20"
+      }
+    ],
+    "notes": [
+      "The trip authorization covers the Denver meeting, December 7-10."
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "DEN",
+        "destination": "LAS",
+        "date": "2026-12-11",
+        "return_date": "",
+        "flights": {
+          "southwest": {
+            "carrier": "WN",
+            "depart": "11:15"
+          },
+          "united": {
+            "carrier": "UA",
+            "depart": "15:30"
+          }
+        },
+        "offers": [
+          {
+            "slot": "southwest-economy",
+            "flight": "southwest",
+            "cabin": "ECONOMY",
+            "fare_cents": 12900
+          },
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 14400
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "REFUSE",
+    "offer_slots": [],
+    "cabins": [
+      "NONE"
+    ],
+    "reason_codes": [
+      "PERSONAL_DESTINATION_NOT_COVERED",
+      "PERSONAL_TRAVEL_NOT_COVERED"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "AIR",
+      "AUTHORIZATION",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        458,
+        460
+      ],
+      "sha256": "e4c893d90242c51a051376f3834551144e7e0dc283ad7dbe75636269763b6253",
+      "quote": "Personal destinations should not be included in business travel airfare. The University cannot pay for airfare to a personal destination when included in business travel airfare.",
+      "why": "no University airfare to a personal destination"
+    },
+    {
+      "lines": [
+        241,
+        243
+      ],
+      "sha256": "32f33cad511e59fd87e3539e2cec1ddbf4235c49649a715a1bfbc58aff935820",
+      "quote": "Travel on official University business should not include personal destinations.",
+      "why": "business travel should not include personal destinations"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        462,
+        467
+      ],
+      "quote": "Reimbursement for the airfare with the personal destination may be limited to the lesser of",
+      "why": "the prorating rule is for a ticket that includes a personal destination, not this one"
+    }
+  ],
+  "design_notes": "Las Vegas is a personal destination: the University cannot pay for airfare to it (lines 458-460, 241-243). Refuse this ticket; the return from Las Vegas would be paid at most the lowest logical Denver-home fare (lines 460-467), which is not what is asked."
+}

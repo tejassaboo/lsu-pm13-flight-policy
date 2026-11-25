@@ -1,0 +1,141 @@
+{
+  "id": "bayou-lantern",
+  "category": "easy",
+  "overlays": [
+    "multi_leg",
+    "dearer_option"
+  ],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Round trip to San Francisco please, out Tuesday, December 15, back Friday, December 18, for the coastal engineering symposium. I'd like premium economy on United both ways and I'll pay the difference myself, up to $300.",
+  "trip": {
+    "traveller_name": "Simone Arceneaux",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Professor, Civil Engineering",
+    "campus": "LSU_A_AND_M",
+    "origin": "IAH",
+    "destination": "SFO",
+    "destination_place": "San Francisco, California",
+    "travel_date": "2026-12-15",
+    "return_date": "2026-12-18",
+    "booking_date": "2026-11-27",
+    "purpose": "Coastal engineering symposium",
+    "purpose_kind": "CONFERENCE",
+    "latest_arrival_local": "",
+    "requested_cabin": "PREMIUM_ECONOMY",
+    "traveller_pays_up_to_cents": 30000,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Simone Arceneaux",
+        "signed_on": "2026-11-24"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "IAH",
+        "destination": "SFO",
+        "date": "2026-12-15",
+        "return_date": "2026-12-18",
+        "flights": {
+          "united": {
+            "carrier": "UA",
+            "depart": "08:00",
+            "return": {
+              "depart": "14:15"
+            }
+          },
+          "alaska": {
+            "carrier": "AS",
+            "depart": "11:20",
+            "return": {
+              "depart": "09:40"
+            }
+          },
+          "evening": {
+            "carrier": "UA",
+            "depart": "17:35",
+            "return": {
+              "depart": "18:05"
+            }
+          }
+        },
+        "offers": [
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 52400
+          },
+          {
+            "slot": "united-premium",
+            "flight": "united",
+            "cabin": "PREMIUM_ECONOMY",
+            "fare_cents": 74800
+          },
+          {
+            "slot": "alaska-economy",
+            "flight": "alaska",
+            "cabin": "ECONOMY",
+            "fare_cents": 54900
+          },
+          {
+            "slot": "evening-economy",
+            "flight": "evening",
+            "cabin": "ECONOMY",
+            "fare_cents": 56000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "united-premium"
+    ],
+    "cabins": [
+      "PREMIUM_ECONOMY"
+    ],
+    "reason_codes": [
+      "TRAVELER_PAYS_UPGRADE"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Round-trip fares. Premium economy is 22400 cents above coach on the same flights; the traveller pays up to 30000, so the University pays coach and the traveller the difference (lines 399-402). Clear twin of cattail-ember (the traveller pays, so the preferred-seat question does not arise)."
+}

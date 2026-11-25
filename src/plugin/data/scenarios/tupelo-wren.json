@@ -1,0 +1,178 @@
+{
+  "id": "tupelo-wren",
+  "category": "easy",
+  "overlays": [
+    "outside_air_section"
+  ],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm presenting at a library science conference in Toronto on Monday, December 14, flying out of Houston. Economy is fine. My supervisor and the Global Travel office have both signed off.",
+  "trip": {
+    "traveller_name": "Hannah Broussard",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Librarian, LSU Libraries",
+    "campus": "LSU_A_AND_M",
+    "origin": "IAH",
+    "destination": "YYZ",
+    "destination_place": "Toronto, Ontario, Canada",
+    "travel_date": "2026-12-14",
+    "return_date": "",
+    "booking_date": "2026-11-26",
+    "purpose": "Paper presentation at a library science conference",
+    "purpose_kind": "CONFERENCE",
+    "latest_arrival_local": "",
+    "requested_cabin": "ECONOMY",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Hannah Broussard",
+        "signed_on": "2026-11-19"
+      },
+      {
+        "role": "GLOBAL_TRAVEL_DIRECTOR",
+        "name": "Renee Fontenot",
+        "subject": "TRAVEL_OUTSIDE_UNITED_STATES",
+        "traveller": "Hannah Broussard",
+        "signed_on": "2026-11-19"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "IAH",
+        "destination": "YYZ",
+        "date": "2026-12-14",
+        "return_date": "",
+        "flights": {
+          "aircanada": {
+            "carrier": "AC",
+            "depart": "09:10"
+          },
+          "united": {
+            "carrier": "UA",
+            "depart": "13:25"
+          }
+        },
+        "offers": [
+          {
+            "slot": "aircanada-economy",
+            "flight": "aircanada",
+            "cabin": "ECONOMY",
+            "fare_cents": 41800
+          },
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 39650
+          },
+          {
+            "slot": "united-business",
+            "flight": "united",
+            "cabin": "BUSINESS",
+            "fare_cents": 98000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "united-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "ENTITY_HEAD_DESIGNEE",
+      "GLOBAL_TRAVEL_DIRECTOR",
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "APPENDIX_B",
+      "DEFINITIONS",
+      "INTERNATIONAL_TRAVEL",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    },
+    {
+      "lines": [
+        113,
+        115
+      ],
+      "sha256": "1bbb942cb3c6255fe766d7e74dd9a506c0497ee2df94347c67a78b551ecaf259",
+      "quote": "The lowest logical airfare is the cheapest available at the time of booking without causing undo inconvenience. These types of airfares are non-refundable, penalty tickets.",
+      "why": "definition P: the lowest logical airfare, non-refundable"
+    },
+    {
+      "lines": [
+        102,
+        104
+      ],
+      "sha256": "7c8cb32e9896b6a38808cffcff8235ceb9c25c67b7883a683d2f5f36864beed8",
+      "quote": "M. International Travel - All travel to destinations outside the 50 United States, District of Columbia, Puerto Rico, U.S. Virgin Islands, American Samoa, Guam and Saipan. Entity Head (or designee) approval is required for international travel, as defined in PM-13.",
+      "why": "definition M: international travel is travel outside the 50 states, DC and the listed territories, and needs Entity Head (or designee) approval"
+    },
+    {
+      "lines": [
+        1072,
+        1074
+      ],
+      "sha256": "e66a9c9dcdef286eb8f96fa0d1f04372f2ad36f05df9af9bfef40a2991431251",
+      "quote": "A. All international travel to destinations outside the 50 United States, as defined in PM-13, must be approved by the Entity Head of higher education or (designee) (i.e., the individual who has been delegated this authority on your campus) prior to the departure date.",
+      "why": "Section VIII.A: Entity Head (or designee) approval before departure"
+    },
+    {
+      "lines": [
+        1402,
+        1402
+      ],
+      "sha256": "52975d6a449304baf407f285f74c64b83cd933fbd7dcb9fd63551b1144061d0f",
+      "quote": "LOUISIANA STATE UNIVERSITY AND A&M COLLEGE APPROVAL AUTHORITY",
+      "why": "Appendix B: the LSU A&M approval table"
+    },
+    {
+      "lines": [
+        1452,
+        1456
+      ],
+      "sha256": "ef31650127e349123cdd137c0682ba8ceb840f1e111f2dcc9ae1105dfa581123",
+      "quote": "Person authorized to approve for LSU A&M travel outside the 50 United States and U.S. Territories (Entity Head designee) Director, Global Travel, Safety & Security N/A",
+      "why": "Appendix B, LSU A&M: the Entity Head designee for travel outside the United States"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Toronto is international travel (definition M, lines 102-104); the Entity Head designee for LSU A&M, the Director, Global Travel, Safety & Security (Appendix B, lines 1452-1456), has approved it, so book the lowest logical economy fare. Clear twin of oriole-batture and plover-cistern."
+}

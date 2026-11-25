@@ -1,0 +1,118 @@
+{
+  "id": "willet-copper",
+  "category": "refusal",
+  "overlays": [
+    "multi_traveller",
+    "outside_air_section"
+  ],
+  "twin_of": "lotus-garnet",
+  "twin_fact": "whose spouse travels: a job candidate's (authorized, lines 1183-1187) or an employee's (line 1202)",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm going to the American Chemical Society meeting in San Diego on Tuesday, December 15, and my wife, Jennifer, is coming with me. Could you book her a seat on my flight from Houston?",
+  "trip": {
+    "traveller_name": "Jennifer Dupuis",
+    "traveller_kind": "SPOUSE_OF_EMPLOYEE",
+    "traveller_title": "Spouse of Professor Paul Dupuis, Chemistry",
+    "campus": "LSU_A_AND_M",
+    "origin": "IAH",
+    "destination": "SAN",
+    "destination_place": "San Diego, California",
+    "travel_date": "2026-12-15",
+    "return_date": "",
+    "booking_date": "2026-11-30",
+    "purpose": "Accompanying her husband to a conference",
+    "purpose_kind": "ACCOMPANYING_TRAVELLER",
+    "latest_arrival_local": "",
+    "requested_cabin": "ECONOMY",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [],
+    "notes": [
+      "Professor Dupuis's own ticket is booked and his trip is authorized."
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "IAH",
+        "destination": "SAN",
+        "date": "2026-12-15",
+        "return_date": "",
+        "flights": {
+          "united": {
+            "carrier": "UA",
+            "depart": "09:40"
+          },
+          "alaska": {
+            "carrier": "AS",
+            "depart": "12:05"
+          }
+        },
+        "offers": [
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 30200
+          },
+          {
+            "slot": "alaska-economy",
+            "flight": "alaska",
+            "cabin": "ECONOMY",
+            "fare_cents": 31900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "REFUSE",
+    "offer_slots": [],
+    "cabins": [
+      "NONE"
+    ],
+    "reason_codes": [
+      "COMPANION_NOT_COVERED",
+      "OUTSIDE_POLICY_SCOPE"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "DEFINITIONS",
+      "RECOGNIZED_PURPOSES",
+      "SPECIAL_MEALS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        1202,
+        1202
+      ],
+      "sha256": "5d0ac533bfae4c7544291cd6c32d08b43711e20be4cc6649ebaacbb54c4cf2d9",
+      "quote": "Note: Expenses for spouses and children of employees may not be paid by public funds.",
+      "why": "spouses and children of employees are not paid from public funds"
+    },
+    {
+      "lines": [
+        209,
+        212
+      ],
+      "sha256": "a563bd663714bf7be57d471cfc007a121770294df045cef03d185319b8be320a",
+      "quote": "B. Recognized Purposes In general, the University may provide travel funds for the following purposes: 1. Authorized travel of members of the Board of Supervisors, faculty, staff (including graduate assistants and student workers) on behalf of the University.",
+      "why": "the recognized purposes the University funds"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Line 1202: expenses for spouses and children of employees may not be paid by public funds; an employee's spouse is no traveller the University funds (lines 209-226). Refuse."
+}

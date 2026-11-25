@@ -1,0 +1,119 @@
+{
+  "id": "egret-sorghum",
+  "category": "easy",
+  "overlays": [],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I have a documented medical accommodation for air travel on file with the Office of Civil Rights & Title IX. Please book me in business class to Seattle on Thursday, December 10, for the fisheries workshop.",
+  "trip": {
+    "traveller_name": "Gerald Landry",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Research Associate, Renewable Natural Resources",
+    "campus": "LSU_A_AND_M",
+    "origin": "IAH",
+    "destination": "SEA",
+    "destination_place": "Seattle, Washington",
+    "travel_date": "2026-12-10",
+    "return_date": "",
+    "booking_date": "2026-11-24",
+    "purpose": "Fisheries management workshop",
+    "purpose_kind": "CONFERENCE",
+    "latest_arrival_local": "",
+    "requested_cabin": "BUSINESS",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "CIVIL_RIGHTS_TITLE_OFFICE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Gerald Landry",
+        "signed_on": "2026-11-20"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "IAH",
+        "destination": "SEA",
+        "date": "2026-12-10",
+        "return_date": "",
+        "flights": {
+          "united": {
+            "carrier": "UA",
+            "depart": "10:00"
+          },
+          "alaska": {
+            "carrier": "AS",
+            "depart": "07:30"
+          }
+        },
+        "offers": [
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 36700
+          },
+          {
+            "slot": "united-business",
+            "flight": "united",
+            "cabin": "BUSINESS",
+            "fare_cents": 112000
+          },
+          {
+            "slot": "alaska-economy",
+            "flight": "alaska",
+            "cabin": "ECONOMY",
+            "fare_cents": 35900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "united-business"
+    ],
+    "cabins": [
+      "BUSINESS"
+    ],
+    "reason_codes": [
+      "MEDICAL_NEED"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        402,
+        406
+      ],
+      "sha256": "166e8852ae00fb73104819576be6f9fefcbb36112f83a45c6ebd270c84153cab",
+      "quote": "Upgrades at the expense of the University are not permitted unless there is a medical accommodation on file with the Office of Civil Rights & Title IX for employees, Office of the Dean of Students Disability Services for students, or documentation from the contracted travel agency indicating the higher-class ticket is the lowest priced airfare available.",
+      "why": "no upgrade at University expense, with three exceptions"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "An employee's medical accommodation is on file with the Office of Civil Rights & Title IX: an upgrade at University expense is permitted (lines 402-404). The only business offer is United's."
+}

@@ -1,0 +1,145 @@
+{
+  "id": "muscadine-reef",
+  "category": "distractor",
+  "overlays": [
+    "personal_travel"
+  ],
+  "twin_of": "nutria-prism",
+  "twin_fact": "personal days in Denver, the business destination, or a ticket on to Las Vegas, a personal destination",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "The soil science meeting in Denver ends on Thursday, December 10, but I'm staying on in Denver for a few personal days. Please book my flight home to Houston on Sunday, December 13.",
+  "trip": {
+    "traveller_name": "Marcus Guidry",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Associate Professor, Agronomy",
+    "campus": "LSU_A_AND_M",
+    "origin": "DEN",
+    "destination": "IAH",
+    "destination_place": "Houston, Texas (on the way home to Baton Rouge)",
+    "travel_date": "2026-12-13",
+    "return_date": "",
+    "booking_date": "2026-11-24",
+    "purpose": "Return from a soil science society meeting, after personal days in Denver",
+    "purpose_kind": "CONFERENCE",
+    "latest_arrival_local": "",
+    "requested_cabin": "ECONOMY",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Marcus Guidry",
+        "signed_on": "2026-11-20"
+      }
+    ],
+    "notes": [
+      "The meeting runs December 7-10; the traveller stays in Denver at his own expense until December 13."
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "DEN",
+        "destination": "IAH",
+        "date": "2026-12-13",
+        "return_date": "",
+        "flights": {
+          "southwest": {
+            "carrier": "WN",
+            "depart": "10:20"
+          },
+          "united": {
+            "carrier": "UA",
+            "depart": "13:45"
+          }
+        },
+        "offers": [
+          {
+            "slot": "southwest-economy",
+            "flight": "southwest",
+            "cabin": "ECONOMY",
+            "fare_cents": 23900
+          },
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 24800
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "southwest-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "DEFINITIONS",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        468,
+        470
+      ],
+      "sha256": "35c1762ddd67946b49e621992d376811093fc69abc51bbfa1b9b64cefa264bf6",
+      "quote": "Whenever airfare does not include a personal destination, the traveler adds personal days to the business destination, the total amount of airfare is reimbursable.",
+      "why": "personal days at the business destination leave the whole fare reimbursable"
+    },
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    },
+    {
+      "lines": [
+        113,
+        115
+      ],
+      "sha256": "1bbb942cb3c6255fe766d7e74dd9a506c0497ee2df94347c67a78b551ecaf259",
+      "quote": "The lowest logical airfare is the cheapest available at the time of booking without causing undo inconvenience. These types of airfares are non-refundable, penalty tickets.",
+      "why": "definition P: the lowest logical airfare, non-refundable"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        462,
+        467
+      ],
+      "quote": "Reimbursement for the airfare with the personal destination may be limited to the lesser of",
+      "why": "the prorating rule is for a ticket that includes a personal destination, not this one"
+    }
+  ],
+  "design_notes": "No personal destination is on the ticket: the traveller adds personal days at the business destination, so the whole airfare is reimbursable (lines 468-470). Book the lowest logical fare home. The prorating rule (lines 462-467) is for a ticket that includes a personal destination."
+}

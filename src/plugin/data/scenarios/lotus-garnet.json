@@ -1,0 +1,148 @@
+{
+  "id": "lotus-garnet",
+  "category": "hidden_clause",
+  "overlays": [
+    "multi_traveller",
+    "outside_air_section"
+  ],
+  "twin_of": "willet-copper",
+  "twin_fact": "whose spouse travels: a job candidate's (authorized, lines 1183-1187) or an employee's (line 1202)",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "My husband, Dr. Alan Pierce, is interviewing for the forestry faculty position on Thursday, January 14, and the department has invited me to come along; they've authorized my travel in writing. Could you book my flight from Seattle to Houston that day? The department picks us up there.",
+  "trip": {
+    "traveller_name": "Karen Pierce",
+    "traveller_kind": "SPOUSE_OF_JOB_CANDIDATE",
+    "traveller_title": "Spouse of a faculty candidate",
+    "campus": "LSU_A_AND_M",
+    "origin": "SEA",
+    "destination": "IAH",
+    "destination_place": "Baton Rouge, Louisiana (by car from Houston)",
+    "travel_date": "2027-01-14",
+    "return_date": "",
+    "booking_date": "2026-12-08",
+    "purpose": "Accompanying a faculty candidate to an employment interview",
+    "purpose_kind": "ACCOMPANYING_TRAVELLER",
+    "latest_arrival_local": "",
+    "requested_cabin": "ECONOMY",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Robert Guidry",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Karen Pierce",
+        "signed_on": "2026-12-04"
+      }
+    ],
+    "notes": [
+      "The candidate's own ticket is booked separately."
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "SEA",
+        "destination": "IAH",
+        "date": "2027-01-14",
+        "return_date": "",
+        "flights": {
+          "alaska": {
+            "carrier": "AS",
+            "depart": "07:45"
+          },
+          "delta": {
+            "carrier": "DL",
+            "depart": "09:20"
+          },
+          "united": {
+            "carrier": "UA",
+            "depart": "11:35"
+          }
+        },
+        "offers": [
+          {
+            "slot": "alaska-economy",
+            "flight": "alaska",
+            "cabin": "ECONOMY",
+            "fare_cents": 31200
+          },
+          {
+            "slot": "delta-economy",
+            "flight": "delta",
+            "cabin": "ECONOMY",
+            "fare_cents": 32900
+          },
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 33400
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "alaska-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "DEFINITIONS",
+      "TRANSPORTATION_METHODS",
+      "VISITORS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        1183,
+        1187
+      ],
+      "sha256": "b8dfdd4c0796ba6e9d6e99317ac7f95543b8fe8e1a372c916b9822fdbfbc3452",
+      "quote": "Travel for the spouse of a candidate may also be authorized for the employment interview.",
+      "why": "a candidate's spouse may be authorized for the interview trip"
+    },
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    },
+    {
+      "lines": [
+        113,
+        115
+      ],
+      "sha256": "1bbb942cb3c6255fe766d7e74dd9a506c0497ee2df94347c67a78b551ecaf259",
+      "quote": "The lowest logical airfare is the cheapest available at the time of booking without causing undo inconvenience. These types of airfares are non-refundable, penalty tickets.",
+      "why": "definition P: the lowest logical airfare, non-refundable"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Section IX.C (lines 1183-1187): travel for the spouse of a candidate may be authorized for the employment interview, and it has been, in writing, by the fiscal authority. Lowest logical economy fare. Contrast willet-copper (an employee's spouse, line 1202)."
+}

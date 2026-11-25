@@ -1,0 +1,139 @@
+{
+  "id": "cypress-ibis",
+  "category": "easy",
+  "overlays": [],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Hi, I'm presenting a poster at the soil science society meeting in Denver and need to fly out of Houston on Monday, December 7. Economy is fine, whatever the University normally books.",
+  "trip": {
+    "traveller_name": "Marcus Guidry",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Associate Professor, Agronomy",
+    "campus": "LSU_A_AND_M",
+    "origin": "IAH",
+    "destination": "DEN",
+    "destination_place": "Denver, Colorado",
+    "travel_date": "2026-12-07",
+    "return_date": "",
+    "booking_date": "2026-11-24",
+    "purpose": "Poster presentation at a soil science society meeting",
+    "purpose_kind": "CONFERENCE",
+    "latest_arrival_local": "",
+    "requested_cabin": "ECONOMY",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Marcus Guidry",
+        "signed_on": "2026-11-20"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "IAH",
+        "destination": "DEN",
+        "date": "2026-12-07",
+        "return_date": "",
+        "flights": {
+          "early": {
+            "carrier": "UA",
+            "depart": "07:05"
+          },
+          "mid": {
+            "carrier": "WN",
+            "depart": "09:15"
+          },
+          "late": {
+            "carrier": "UA",
+            "depart": "12:30"
+          }
+        },
+        "offers": [
+          {
+            "slot": "early-economy",
+            "flight": "early",
+            "cabin": "ECONOMY",
+            "fare_cents": 28940
+          },
+          {
+            "slot": "early-business",
+            "flight": "early",
+            "cabin": "BUSINESS",
+            "fare_cents": 89000
+          },
+          {
+            "slot": "mid-economy",
+            "flight": "mid",
+            "cabin": "ECONOMY",
+            "fare_cents": 30410
+          },
+          {
+            "slot": "late-economy",
+            "flight": "late",
+            "cabin": "ECONOMY",
+            "fare_cents": 31275
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "early-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "DEFINITIONS",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    },
+    {
+      "lines": [
+        113,
+        115
+      ],
+      "sha256": "1bbb942cb3c6255fe766d7e74dd9a506c0497ee2df94347c67a78b551ecaf259",
+      "quote": "The lowest logical airfare is the cheapest available at the time of booking without causing undo inconvenience. These types of airfares are non-refundable, penalty tickets.",
+      "why": "definition P: the lowest logical airfare, non-refundable"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Domestic economy at the lowest logical fare (lines 399-401, 113-115): the 07:05 United nonstop."
+}

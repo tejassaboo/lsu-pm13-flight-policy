@@ -1,0 +1,143 @@
+{
+  "id": "mimosa-cairn",
+  "category": "hidden_clause",
+  "overlays": [
+    "synonym"
+  ],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm a grad student presenting at the agricultural economics meeting in Phoenix on Thursday, December 10. My accommodation letter from the campus disability office says I need a seat with more room to lie back, so could you book the front cabin?",
+  "trip": {
+    "traveller_name": "Tyler Comeaux",
+    "traveller_kind": "STUDENT",
+    "traveller_title": "Graduate Assistant, Agricultural Economics",
+    "campus": "LSU_A_AND_M",
+    "origin": "IAH",
+    "destination": "PHX",
+    "destination_place": "Phoenix, Arizona",
+    "travel_date": "2026-12-10",
+    "return_date": "",
+    "booking_date": "2026-11-24",
+    "purpose": "Paper presentation at an agricultural economics meeting",
+    "purpose_kind": "CONFERENCE",
+    "latest_arrival_local": "",
+    "requested_cabin": "BUSINESS",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "STUDENT_DISABILITY_SERVICES",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Tyler Comeaux",
+        "signed_on": "2026-11-19"
+      },
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "AUTHORIZED_TRAVELLER_STATUS",
+        "traveller": "Tyler Comeaux",
+        "signed_on": "2026-11-19"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "IAH",
+        "destination": "PHX",
+        "date": "2026-12-10",
+        "return_date": "",
+        "flights": {
+          "united": {
+            "carrier": "UA",
+            "depart": "09:05"
+          },
+          "american": {
+            "carrier": "AA",
+            "depart": "11:30"
+          }
+        },
+        "offers": [
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 25400
+          },
+          {
+            "slot": "united-business",
+            "flight": "united",
+            "cabin": "BUSINESS",
+            "fare_cents": 71800
+          },
+          {
+            "slot": "american-economy",
+            "flight": "american",
+            "cabin": "ECONOMY",
+            "fare_cents": 26900
+          },
+          {
+            "slot": "american-business",
+            "flight": "american",
+            "cabin": "BUSINESS",
+            "fare_cents": 69900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "american-business"
+    ],
+    "cabins": [
+      "BUSINESS"
+    ],
+    "reason_codes": [
+      "MEDICAL_NEED"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        402,
+        406
+      ],
+      "sha256": "166e8852ae00fb73104819576be6f9fefcbb36112f83a45c6ebd270c84153cab",
+      "quote": "Upgrades at the expense of the University are not permitted unless there is a medical accommodation on file with the Office of Civil Rights & Title IX for employees, Office of the Dean of Students Disability Services for students, or documentation from the contracted travel agency indicating the higher-class ticket is the lowest priced airfare available.",
+      "why": "no upgrade at University expense, with three exceptions"
+    },
+    {
+      "lines": [
+        61,
+        62
+      ],
+      "sha256": "4e9e14d02845d1d40c9243891fe457b76d08719375d7a0e20b224dcc18533299",
+      "quote": "Students must be deemed authorized travelers to be reimbursed for university business purposes.",
+      "why": "a student must be deemed an authorized traveller"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "For students the accommodation must be on file with the Office of the Dean of Students Disability Services (lines 402-404); the request calls it the campus disability office and the front cabin. The student is deemed an authorized traveller (lines 61-62). The cheapest business seat is American's."
+}

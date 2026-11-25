@@ -1,0 +1,152 @@
+{
+  "id": "dogwood-tern",
+  "category": "flag",
+  "overlays": [
+    "unclear_phrase"
+  ],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [
+    "heron-cane",
+    "palmetto-gale"
+  ],
+  "ambiguity_note": {
+    "phrase": "not to exceed 110% of the coach rate",
+    "readings": [
+      "a cap on the University's share: it pays up to 110% of coach and the traveller pays the rest of a dearer business fare",
+      "a condition: business is allowed only when it costs at most 110% of coach; otherwise the University pays coach and the traveller pays the whole difference"
+    ]
+  },
+  "request": "I'm flying Houston to Auckland on Tuesday, February 2, for the soil carbon workshop. Business class on the Air New Zealand nonstop please. If the University won't cover all of it I can chip in up to $100, but no more.",
+  "trip": {
+    "traveller_name": "Robert Hebert",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Professor, Soil Science",
+    "campus": "LSU_A_AND_M",
+    "origin": "IAH",
+    "destination": "AKL",
+    "destination_place": "Auckland, New Zealand",
+    "travel_date": "2027-02-02",
+    "return_date": "",
+    "booking_date": "2026-12-11",
+    "purpose": "Soil carbon workshop",
+    "purpose_kind": "CONFERENCE",
+    "latest_arrival_local": "",
+    "requested_cabin": "BUSINESS",
+    "traveller_pays_up_to_cents": 10000,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Robert Hebert",
+        "signed_on": "2026-12-08"
+      },
+      {
+        "role": "GLOBAL_TRAVEL_DIRECTOR",
+        "name": "Renee Fontenot",
+        "subject": "TRAVEL_OUTSIDE_UNITED_STATES",
+        "traveller": "Robert Hebert",
+        "signed_on": "2026-12-08"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "IAH",
+        "destination": "AKL",
+        "date": "2027-02-02",
+        "return_date": "",
+        "flights": {
+          "airnz": {
+            "carrier": "NZ",
+            "depart": "20:30",
+            "minutes": [
+              860
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "airnz-economy",
+            "flight": "airnz",
+            "cabin": "ECONOMY",
+            "fare_cents": 160000
+          },
+          {
+            "slot": "airnz-business",
+            "flight": "airnz",
+            "cabin": "BUSINESS",
+            "fare_cents": 184000
+          }
+        ],
+        "background": 0
+      }
+    ]
+  },
+  "expected": {
+    "decision": "FLAG_FOR_APPROVAL",
+    "offer_slots": [
+      "airnz-business",
+      "airnz-economy"
+    ],
+    "cabins": [
+      "BUSINESS",
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "UNCLEAR_POLICY_TEXT"
+    ],
+    "approvers": [
+      "NOT_NAMED",
+      "PRESIDENT_OR_DESIGNEE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": "not to exceed 110% of the coach rate"
+  },
+  "must_keep": [
+    {
+      "lines": [
+        423,
+        427
+      ],
+      "sha256": "d78bbf5d66f89cef518dff4890bb7110d125ebaf00d8f12e0905237ef5a8b6e0",
+      "quote": "c. For international travel only, when an international flight segment is more than 10 hours in duration, the University will allow the business class rate, not to exceed 110% of the coach rate. The traveler's itinerary provided by the travel agency must document the flight segment as more than 10 hours and must be attached to the Travel Expense Reimbursement Request/Expense Report.",
+      "why": "international travel only: a segment over 10 hours allows the business rate up to 110% of coach; segments are measured one by one"
+    },
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    },
+    {
+      "lines": [
+        43,
+        44
+      ],
+      "sha256": "dc2b09b2640a6362922262e15f4de0989d709015ec3448cd3a83fd895401988f",
+      "quote": "This permanent memorandum allows for discretion or exceptions approved by the President of the University or his/her designee.",
+      "why": "who may settle a discretionary question"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Business 184000 is 115% of coach 160000; 110% is 176000. If 110% caps the University's share, the traveller pays 8000 and flies business (within the 10000 offered). If business above 110% is simply not allowed, the University pays coach and the traveller would owe 24000: coach. The two readings differ, so hold."
+}

@@ -1,0 +1,171 @@
+{
+  "id": "oriole-batture",
+  "category": "flag",
+  "overlays": [
+    "outside_air_section",
+    "approval_required"
+  ],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [
+    "tupelo-wren",
+    "cypress-ibis"
+  ],
+  "ambiguity_note": "none: an approval-required hold, not unclear words",
+  "request": "I'm presenting at a library science conference in Toronto on Monday, December 14, flying out of Houston. Economy is fine. My supervisor has signed my travel authorization.",
+  "trip": {
+    "traveller_name": "Claire Lavergne",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Librarian, LSU Alexandria Library",
+    "campus": "LSU_ALEXANDRIA",
+    "origin": "IAH",
+    "destination": "YYZ",
+    "destination_place": "Toronto, Ontario, Canada",
+    "travel_date": "2026-12-14",
+    "return_date": "",
+    "booking_date": "2026-11-26",
+    "purpose": "Paper presentation at a library science conference",
+    "purpose_kind": "CONFERENCE",
+    "latest_arrival_local": "",
+    "requested_cabin": "ECONOMY",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Mark Bordelon",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Claire Lavergne",
+        "signed_on": "2026-11-19"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "IAH",
+        "destination": "YYZ",
+        "date": "2026-12-14",
+        "return_date": "",
+        "flights": {
+          "aircanada": {
+            "carrier": "AC",
+            "depart": "09:10"
+          },
+          "united": {
+            "carrier": "UA",
+            "depart": "13:25"
+          }
+        },
+        "offers": [
+          {
+            "slot": "aircanada-economy",
+            "flight": "aircanada",
+            "cabin": "ECONOMY",
+            "fare_cents": 41800
+          },
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 39650
+          },
+          {
+            "slot": "united-business",
+            "flight": "united",
+            "cabin": "BUSINESS",
+            "fare_cents": 98000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "FLAG_FOR_APPROVAL",
+    "offer_slots": [
+      "united-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "APPROVAL_REQUIRED"
+    ],
+    "approvers": [
+      "CHANCELLOR",
+      "ENTITY_HEAD_DESIGNEE"
+    ],
+    "clauses": [
+      "APPENDIX_B",
+      "DEFINITIONS",
+      "INTERNATIONAL_TRAVEL"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        102,
+        104
+      ],
+      "sha256": "7c8cb32e9896b6a38808cffcff8235ceb9c25c67b7883a683d2f5f36864beed8",
+      "quote": "M. International Travel - All travel to destinations outside the 50 United States, District of Columbia, Puerto Rico, U.S. Virgin Islands, American Samoa, Guam and Saipan. Entity Head (or designee) approval is required for international travel, as defined in PM-13.",
+      "why": "definition M: international travel is travel outside the 50 states, DC and the listed territories, and needs Entity Head (or designee) approval"
+    },
+    {
+      "lines": [
+        1072,
+        1074
+      ],
+      "sha256": "e66a9c9dcdef286eb8f96fa0d1f04372f2ad36f05df9af9bfef40a2991431251",
+      "quote": "A. All international travel to destinations outside the 50 United States, as defined in PM-13, must be approved by the Entity Head of higher education or (designee) (i.e., the individual who has been delegated this authority on your campus) prior to the departure date.",
+      "why": "Section VIII.A: Entity Head (or designee) approval before departure"
+    },
+    {
+      "lines": [
+        1471,
+        1471
+      ],
+      "sha256": "d27256ba4e226683bb4783202c60723697a2e95198b2c79fe97ea3694a19c496",
+      "quote": "LOUISIANA STATE UNIVERSITY AT ALEXANDRIA APPROVAL AUTHORITY",
+      "why": "Appendix B: the LSU Alexandria approval table"
+    },
+    {
+      "lines": [
+        1511,
+        1514
+      ],
+      "sha256": "f8968f22b85bec5cd97744815e45665a6859420e5c5cc9cde52f86f56885c26d",
+      "quote": "Person authorized to approve travel outside the 50 United States and U.S. Territories (Entity Head designee) Chancellor N/A",
+      "why": "Appendix B, LSU Alexandria: the Entity Head designee for travel outside the United States"
+    },
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        1082,
+        1084
+      ],
+      "quote": "Approval by the traveler's supervisor (or his/her designee) and/or the person with fiscal responsibility",
+      "why": "the supervisor's approval is also needed, and is on file"
+    }
+  ],
+  "design_notes": "Toronto is international travel (definition M), which the Entity Head (or designee) must approve before departure (lines 1072-1074). For LSU Alexandria, Appendix B names the Chancellor (lines 1511-1514). Only the supervisor's authorization is on file: hold the lowest economy fare for that approval."
+}

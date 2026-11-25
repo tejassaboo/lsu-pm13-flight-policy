@@ -1,0 +1,198 @@
+{
+  "id": "crescent-loom",
+  "category": "multi_rule",
+  "overlays": [
+    "multi_leg",
+    "date_arithmetic",
+    "month_end",
+    "dearer_option"
+  ],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm giving the keynote at the opening reception of an Asian studies conference in Seoul at 9 p.m. on Tuesday, December 1, Seoul time. The hotel is about an hour from Incheon, so I have to land by 7:30 p.m. that evening. Leaving Houston on Monday, November 30. Economy is fine; international approval is on file.",
+  "trip": {
+    "traveller_name": "Mei Lin Robichaux",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Professor, Foreign Languages and Literatures",
+    "campus": "LSU_A_AND_M",
+    "origin": "IAH",
+    "destination": "ICN",
+    "destination_place": "Seoul, South Korea",
+    "travel_date": "2026-11-30",
+    "return_date": "",
+    "booking_date": "2026-11-24",
+    "purpose": "Keynote at an Asian studies conference",
+    "purpose_kind": "CONFERENCE",
+    "latest_arrival_local": "2026-12-01 19:30",
+    "requested_cabin": "ECONOMY",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Mei Lin Robichaux",
+        "signed_on": "2026-11-20"
+      },
+      {
+        "role": "GLOBAL_TRAVEL_DIRECTOR",
+        "name": "Renee Fontenot",
+        "subject": "TRAVEL_OUTSIDE_UNITED_STATES",
+        "traveller": "Mei Lin Robichaux",
+        "signed_on": "2026-11-20"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "IAH",
+        "destination": "ICN",
+        "date": "2026-11-30",
+        "return_date": "",
+        "flights": {
+          "korean": {
+            "carrier": "KE",
+            "depart": "11:30",
+            "minutes": [
+              850
+            ]
+          },
+          "united": {
+            "carrier": "UA",
+            "depart": "13:00",
+            "via": [
+              "SFO"
+            ],
+            "minutes": [
+              265,
+              760
+            ],
+            "layovers": [
+              135
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "korean-economy",
+            "flight": "korean",
+            "cabin": "ECONOMY",
+            "fare_cents": 131000
+          },
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 118000
+          }
+        ],
+        "background": 0
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "korean-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "ENTITY_HEAD_DESIGNEE",
+      "GLOBAL_TRAVEL_DIRECTOR",
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "APPENDIX_B",
+      "DEFINITIONS",
+      "INTERNATIONAL_TRAVEL",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    },
+    {
+      "lines": [
+        113,
+        115
+      ],
+      "sha256": "1bbb942cb3c6255fe766d7e74dd9a506c0497ee2df94347c67a78b551ecaf259",
+      "quote": "The lowest logical airfare is the cheapest available at the time of booking without causing undo inconvenience. These types of airfares are non-refundable, penalty tickets.",
+      "why": "definition P: the lowest logical airfare, non-refundable"
+    },
+    {
+      "lines": [
+        369,
+        371
+      ],
+      "sha256": "406fe7717c6d5b3ba15494a8b78c5e9902d923a25e9c969061c3a9cd594db6ff",
+      "quote": "The most cost-effective method of transportation that will accomplish the purpose of the travel shall be selected.",
+      "why": "the ticket must accomplish the purpose of the travel"
+    },
+    {
+      "lines": [
+        102,
+        104
+      ],
+      "sha256": "7c8cb32e9896b6a38808cffcff8235ceb9c25c67b7883a683d2f5f36864beed8",
+      "quote": "M. International Travel - All travel to destinations outside the 50 United States, District of Columbia, Puerto Rico, U.S. Virgin Islands, American Samoa, Guam and Saipan. Entity Head (or designee) approval is required for international travel, as defined in PM-13.",
+      "why": "definition M: international travel is travel outside the 50 states, DC and the listed territories, and needs Entity Head (or designee) approval"
+    },
+    {
+      "lines": [
+        1072,
+        1074
+      ],
+      "sha256": "e66a9c9dcdef286eb8f96fa0d1f04372f2ad36f05df9af9bfef40a2991431251",
+      "quote": "A. All international travel to destinations outside the 50 United States, as defined in PM-13, must be approved by the Entity Head of higher education or (designee) (i.e., the individual who has been delegated this authority on your campus) prior to the departure date.",
+      "why": "Section VIII.A: Entity Head (or designee) approval before departure"
+    },
+    {
+      "lines": [
+        1402,
+        1402
+      ],
+      "sha256": "52975d6a449304baf407f285f74c64b83cd933fbd7dcb9fd63551b1144061d0f",
+      "quote": "LOUISIANA STATE UNIVERSITY AND A&M COLLEGE APPROVAL AUTHORITY",
+      "why": "Appendix B: the LSU A&M approval table"
+    },
+    {
+      "lines": [
+        1452,
+        1456
+      ],
+      "sha256": "ef31650127e349123cdd137c0682ba8ceb840f1e111f2dcc9ae1105dfa581123",
+      "quote": "Person authorized to approve for LSU A&M travel outside the 50 United States and U.S. Territories (Entity Head designee) Director, Global Travel, Safety & Security N/A",
+      "why": "Appendix B, LSU A&M: the Entity Head designee for travel outside the United States"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "The cheaper United connection lands at Incheon at 23:20 local on December 1, after the latest useful arrival (19:30); the Korean Air nonstop lands at 16:40 local on December 1. The lowest logical fare is the cheapest that accomplishes the purpose of the travel (lines 113-115, 369-371): the dearer nonstop. Leaving November 30 and landing December 1 crosses the date line and the month end."
+}

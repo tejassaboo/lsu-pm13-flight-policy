@@ -1,0 +1,140 @@
+{
+  "id": "tallow-orchid",
+  "category": "distractor",
+  "overlays": [],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Minneapolis on Thursday, December 17, for the grant review. My dates might shift, so please get me a refundable ticket on the morning Delta flight.",
+  "trip": {
+    "traveller_name": "Olivia Melancon",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Assistant Professor, Kinesiology",
+    "campus": "LSU_A_AND_M",
+    "origin": "IAH",
+    "destination": "MSP",
+    "destination_place": "Minneapolis, Minnesota",
+    "travel_date": "2026-12-17",
+    "return_date": "",
+    "booking_date": "2026-11-25",
+    "purpose": "Grant review meeting",
+    "purpose_kind": "MEETING",
+    "latest_arrival_local": "",
+    "requested_cabin": "ECONOMY",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": true,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Olivia Melancon",
+        "signed_on": "2026-11-23"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "IAH",
+        "destination": "MSP",
+        "date": "2026-12-17",
+        "return_date": "",
+        "flights": {
+          "delta": {
+            "carrier": "DL",
+            "depart": "07:50"
+          },
+          "united": {
+            "carrier": "UA",
+            "depart": "10:15"
+          }
+        },
+        "offers": [
+          {
+            "slot": "delta-economy",
+            "flight": "delta",
+            "cabin": "ECONOMY",
+            "fare_cents": 27300
+          },
+          {
+            "slot": "delta-flexible",
+            "flight": "delta",
+            "cabin": "ECONOMY",
+            "fare_cents": 41300,
+            "refundable": true
+          },
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 28800
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "delta-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE",
+      "REFUNDABLE_FARE_NOT_ALLOWED"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "DEFINITIONS",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        113,
+        115
+      ],
+      "sha256": "1bbb942cb3c6255fe766d7e74dd9a506c0497ee2df94347c67a78b551ecaf259",
+      "quote": "The lowest logical airfare is the cheapest available at the time of booking without causing undo inconvenience. These types of airfares are non-refundable, penalty tickets.",
+      "why": "definition P: the lowest logical airfare, non-refundable"
+    },
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        414,
+        418
+      ],
+      "quote": "If a lowest logical priced ticket is purchased and the traveler's schedule changes resulting in a penalty and additional cost to change the ticket, the University will reimburse the penalty incurred when the change or cancellation is required by the University",
+      "why": "a change the University requires is paid as a penalty: no reason to buy a refundable fare"
+    }
+  ],
+  "design_notes": "The lowest logical airfare is a non-refundable penalty ticket (lines 113-115); the University pays the lowest logical coach fare (lines 399-401). A change the University requires is reimbursed as a penalty (lines 414-418), which is no reason to buy the refundable fare 14000 cents dearer."
+}

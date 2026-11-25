@@ -1,0 +1,186 @@
+{
+  "id": "chicory-anvil",
+  "category": "multi_rule",
+  "overlays": [
+    "dearer_option"
+  ],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm flying Dallas to Sydney on Monday, January 18, for the International Grassland Congress. Business on the Qantas nonstop please. If the University won't cover all of it I'll pay the rest, up to $250. My international travel approval is signed.",
+  "trip": {
+    "traveller_name": "Thomas Lejeune",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Professor, Animal Sciences",
+    "campus": "LSU_A_AND_M",
+    "origin": "DFW",
+    "destination": "SYD",
+    "destination_place": "Sydney, Australia",
+    "travel_date": "2027-01-18",
+    "return_date": "",
+    "booking_date": "2026-12-03",
+    "purpose": "International Grassland Congress",
+    "purpose_kind": "CONFERENCE",
+    "latest_arrival_local": "",
+    "requested_cabin": "BUSINESS",
+    "traveller_pays_up_to_cents": 25000,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Thomas Lejeune",
+        "signed_on": "2026-11-30"
+      },
+      {
+        "role": "GLOBAL_TRAVEL_DIRECTOR",
+        "name": "Renee Fontenot",
+        "subject": "TRAVEL_OUTSIDE_UNITED_STATES",
+        "traveller": "Thomas Lejeune",
+        "signed_on": "2026-11-30"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "DFW",
+        "destination": "SYD",
+        "date": "2027-01-18",
+        "return_date": "",
+        "flights": {
+          "qantas": {
+            "carrier": "QF",
+            "depart": "20:05",
+            "minutes": [
+              1020
+            ]
+          },
+          "american": {
+            "carrier": "AA",
+            "depart": "21:40",
+            "minutes": [
+              1025
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "qantas-economy",
+            "flight": "qantas",
+            "cabin": "ECONOMY",
+            "fare_cents": 120000
+          },
+          {
+            "slot": "qantas-business",
+            "flight": "qantas",
+            "cabin": "BUSINESS",
+            "fare_cents": 138000
+          },
+          {
+            "slot": "american-economy",
+            "flight": "american",
+            "cabin": "ECONOMY",
+            "fare_cents": 126000
+          }
+        ],
+        "background": 0
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "qantas-business"
+    ],
+    "cabins": [
+      "BUSINESS"
+    ],
+    "reason_codes": [
+      "INTERNATIONAL_LONG_FLIGHT",
+      "TRAVELER_PAYS_UPGRADE"
+    ],
+    "approvers": [
+      "ENTITY_HEAD_DESIGNEE",
+      "GLOBAL_TRAVEL_DIRECTOR",
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "APPENDIX_B",
+      "DEFINITIONS",
+      "INTERNATIONAL_TRAVEL",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    },
+    {
+      "lines": [
+        423,
+        427
+      ],
+      "sha256": "d78bbf5d66f89cef518dff4890bb7110d125ebaf00d8f12e0905237ef5a8b6e0",
+      "quote": "c. For international travel only, when an international flight segment is more than 10 hours in duration, the University will allow the business class rate, not to exceed 110% of the coach rate. The traveler's itinerary provided by the travel agency must document the flight segment as more than 10 hours and must be attached to the Travel Expense Reimbursement Request/Expense Report.",
+      "why": "international travel only: a segment over 10 hours allows the business rate up to 110% of coach; segments are measured one by one"
+    },
+    {
+      "lines": [
+        102,
+        104
+      ],
+      "sha256": "7c8cb32e9896b6a38808cffcff8235ceb9c25c67b7883a683d2f5f36864beed8",
+      "quote": "M. International Travel - All travel to destinations outside the 50 United States, District of Columbia, Puerto Rico, U.S. Virgin Islands, American Samoa, Guam and Saipan. Entity Head (or designee) approval is required for international travel, as defined in PM-13.",
+      "why": "definition M: international travel is travel outside the 50 states, DC and the listed territories, and needs Entity Head (or designee) approval"
+    },
+    {
+      "lines": [
+        1072,
+        1074
+      ],
+      "sha256": "e66a9c9dcdef286eb8f96fa0d1f04372f2ad36f05df9af9bfef40a2991431251",
+      "quote": "A. All international travel to destinations outside the 50 United States, as defined in PM-13, must be approved by the Entity Head of higher education or (designee) (i.e., the individual who has been delegated this authority on your campus) prior to the departure date.",
+      "why": "Section VIII.A: Entity Head (or designee) approval before departure"
+    },
+    {
+      "lines": [
+        1402,
+        1402
+      ],
+      "sha256": "52975d6a449304baf407f285f74c64b83cd933fbd7dcb9fd63551b1144061d0f",
+      "quote": "LOUISIANA STATE UNIVERSITY AND A&M COLLEGE APPROVAL AUTHORITY",
+      "why": "Appendix B: the LSU A&M approval table"
+    },
+    {
+      "lines": [
+        1452,
+        1456
+      ],
+      "sha256": "ef31650127e349123cdd137c0682ba8ceb840f1e111f2dcc9ae1105dfa581123",
+      "quote": "Person authorized to approve for LSU A&M travel outside the 50 United States and U.S. Territories (Entity Head designee) Director, Global Travel, Safety & Security N/A",
+      "why": "Appendix B, LSU A&M: the Entity Head designee for travel outside the United States"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Business 138000 is 115% of the 120000 coach fare, over the 110% of lines 423-427. Whether 110% caps the University's share (the traveller pays 6000) or is a condition (the University pays coach, the traveller 18000), the traveller's 25000 covers it, and lines 399-402 let the traveller pay the difference: business."
+}

@@ -1,0 +1,158 @@
+{
+  "id": "sorrel-harbor",
+  "category": "hidden_clause",
+  "overlays": [
+    "synonym",
+    "upgrade_not_taken"
+  ],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Atlanta on Friday, December 4, for the extension directors' meeting. Please put me on Delta: I'm chasing Diamond Medallion status this year and this trip would get me there, even if it's a bit more than the others.",
+  "trip": {
+    "traveller_name": "Brenda Savoie",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Regional Director, LSU AgCenter Extension",
+    "campus": "LSU_A_AND_M",
+    "origin": "IAH",
+    "destination": "ATL",
+    "destination_place": "Atlanta, Georgia",
+    "travel_date": "2026-12-04",
+    "return_date": "",
+    "booking_date": "2026-11-24",
+    "purpose": "Extension directors' meeting",
+    "purpose_kind": "MEETING",
+    "latest_arrival_local": "",
+    "requested_cabin": "ECONOMY",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "Delta Air Lines",
+    "requested_airline_reason": "FREQUENT_FLYER_MILES",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Brenda Savoie",
+        "signed_on": "2026-11-21"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "IAH",
+        "destination": "ATL",
+        "date": "2026-12-04",
+        "return_date": "",
+        "flights": {
+          "delta": {
+            "carrier": "DL",
+            "depart": "08:00"
+          },
+          "united": {
+            "carrier": "UA",
+            "depart": "09:30"
+          },
+          "american": {
+            "carrier": "AA",
+            "depart": "12:10",
+            "via": [
+              "CLT"
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "delta-economy",
+            "flight": "delta",
+            "cabin": "ECONOMY",
+            "fare_cents": 30800
+          },
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 26600
+          },
+          {
+            "slot": "american-economy",
+            "flight": "american",
+            "cabin": "ECONOMY",
+            "fare_cents": 28700
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "united-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE",
+      "LOYALTY_PROGRAM_PREFERENCE"
+    ],
+    "approvers": [
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "DEFINITIONS",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        440,
+        444
+      ],
+      "sha256": "8ab5a3a034984f73418a55f10b2a0eb7859a8bb654ea5cb4eab1277fdd8fca5b",
+      "quote": "However, if an employee makes travel arrangements which favor a preferred airline/supplier to receive reward/points and this circumvents purchasing the most economical means of travel, the employee is in violation of this travel policy. Costs for travel arrangements subject to this violation are non-reimbursable.",
+      "why": "routing for points over the most economical fare is a violation"
+    },
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    },
+    {
+      "lines": [
+        113,
+        115
+      ],
+      "sha256": "1bbb942cb3c6255fe766d7e74dd9a506c0497ee2df94347c67a78b551ecaf259",
+      "quote": "The lowest logical airfare is the cheapest available at the time of booking without causing undo inconvenience. These types of airfares are non-refundable, penalty tickets.",
+      "why": "definition P: the lowest logical airfare, non-refundable"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        438,
+        439
+      ],
+      "quote": "Employees may retain hotel reward/points and frequent flyer miles earned on official University travel",
+      "why": "keeping miles is allowed; choosing a dearer airline to earn them is not"
+    }
+  ],
+  "design_notes": "Elite status is the \"reward/points\" of lines 440-444: favouring Delta for it, 4200 cents above the lowest logical fare, breaks the policy, and those costs are non-reimbursable. Book the United fare."
+}

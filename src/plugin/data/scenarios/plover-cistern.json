@@ -1,0 +1,172 @@
+{
+  "id": "plover-cistern",
+  "category": "flag",
+  "overlays": [
+    "outside_air_section",
+    "approval_required"
+  ],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [
+    "bramble-quay",
+    "tupelo-wren"
+  ],
+  "ambiguity_note": "none: an approval-required hold, not unclear words",
+  "request": "I need to fly Houston to Mexico City on Monday, January 25, then drive to our field plots in Guerrero state for two weeks of sampling. Economy is fine. The Global Travel office has signed off.",
+  "trip": {
+    "traveller_name": "Isabel Cormier",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Assistant Professor, Plant Pathology",
+    "campus": "LSU_A_AND_M",
+    "origin": "IAH",
+    "destination": "MEX",
+    "destination_place": "Guerrero state, Mexico (via Mexico City)",
+    "travel_date": "2027-01-25",
+    "return_date": "",
+    "booking_date": "2026-12-07",
+    "purpose": "Field sampling at research plots",
+    "purpose_kind": "RESEARCH",
+    "latest_arrival_local": "",
+    "requested_cabin": "ECONOMY",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "DO_NOT_TRAVEL",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Isabel Cormier",
+        "signed_on": "2026-12-02"
+      },
+      {
+        "role": "GLOBAL_TRAVEL_DIRECTOR",
+        "name": "Renee Fontenot",
+        "subject": "TRAVEL_OUTSIDE_UNITED_STATES",
+        "traveller": "Isabel Cormier",
+        "signed_on": "2026-12-02"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "IAH",
+        "destination": "MEX",
+        "date": "2027-01-25",
+        "return_date": "",
+        "flights": {
+          "aeromexico": {
+            "carrier": "AM",
+            "depart": "08:15"
+          },
+          "united": {
+            "carrier": "UA",
+            "depart": "11:00"
+          }
+        },
+        "offers": [
+          {
+            "slot": "aeromexico-economy",
+            "flight": "aeromexico",
+            "cabin": "ECONOMY",
+            "fare_cents": 38900
+          },
+          {
+            "slot": "united-economy",
+            "flight": "united",
+            "cabin": "ECONOMY",
+            "fare_cents": 41200
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "FLAG_FOR_APPROVAL",
+    "offer_slots": [
+      "aeromexico-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "APPROVAL_REQUIRED"
+    ],
+    "approvers": [
+      "PROVOST",
+      "VICE_PROVOST"
+    ],
+    "clauses": [
+      "APPENDIX_B",
+      "DEFINITIONS",
+      "INTERNATIONAL_TRAVEL"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        95,
+        99
+      ],
+      "sha256": "6563b9eb751e4095dccf3ea13408f092617d4265d552be4d60049e81be0dc53b",
+      "quote": "K. High Risk Travel - Countries subject to a U.S. Department of State travel advisory, including foreign adversary countries, that require special efforts to mitigate risk and, when necessary, avoidance of travel altogether. Each campus must have prior approval procedures in place for travel to a high-risk country, including foreign adversaries. Such approval is in addition to the Entity Head (or designee) approval required for international travel, as defined in PM-13.",
+      "why": "definition K: High Risk Travel, approved in addition to the international approval"
+    },
+    {
+      "lines": [
+        1075,
+        1080
+      ],
+      "sha256": "cb938afc31a498adfadb864a3e5cde8f7cb84a9666df2d2f43adb5fa88a5c124",
+      "quote": "Requests for High Risk travel, including travel to foreign adversary countries, should be submitted through the appropriate administrative channels (i.e. Department Head, Dean, Vice Chancellor, High Risk Travel Committee, etc.) for approved by the designated individual within the institution central administrative office, as identified in Appendix B, prior to the departure date. The high-risk travel approval is in addition to the required approval by the Entity Head (or designee) for international travel, as defined in PM-13.",
+      "why": "Section VIII.A: high-risk travel needs the Appendix B approver before departure, in addition to the Entity Head (or designee)"
+    },
+    {
+      "lines": [
+        1402,
+        1402
+      ],
+      "sha256": "52975d6a449304baf407f285f74c64b83cd933fbd7dcb9fd63551b1144061d0f",
+      "quote": "LOUISIANA STATE UNIVERSITY AND A&M COLLEGE APPROVAL AUTHORITY",
+      "why": "Appendix B: the LSU A&M approval table"
+    },
+    {
+      "lines": [
+        1444,
+        1447
+      ],
+      "sha256": "d063213aa96db4664c274732eba6adfb34f4e7c7cc7a6732d62bf1ef0a7f1226",
+      "quote": "Person authorized to approve travel to High Risk Regions and to Foreign Adversary Countries Provost Vice Provost",
+      "why": "Appendix B, LSU A&M: the high-risk approver (designated and delegated)"
+    },
+    {
+      "lines": [
+        399,
+        402
+      ],
+      "sha256": "c44bc2ee0e7f95ac2722fc27aa6b7fb64bd54da88a5381e1158082885905156f",
+      "quote": "Commercial air travel will not be reimbursed more than lowest logical coach/economy class rates when it has been determined to be the best value. The difference between coach/economy class rates and first class or business class rates will be paid by the traveler.",
+      "why": "the University pays the lowest logical coach fare; the traveller pays any difference"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        1082,
+        1084
+      ],
+      "quote": "Approval by the traveler's supervisor (or his/her designee) and/or the person with fiscal responsibility",
+      "why": "the supervisor's approval is also needed, and is on file"
+    }
+  ],
+  "design_notes": "A Do Not Travel region is High Risk Travel (definition K, lines 95-99). Its approval is in addition to the Entity Head designee's (lines 1075-1080), which is on file; LSU A&M's high-risk approver is the Provost, delegated to the Vice Provost (Appendix B, lines 1444-1447). Hold the lowest economy fare."
+}

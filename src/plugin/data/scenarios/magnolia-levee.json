@@ -1,0 +1,182 @@
+{
+  "id": "magnolia-levee",
+  "category": "easy",
+  "overlays": [],
+  "twin_of": null,
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm flying from Dallas to Seoul on Saturday, December 12, to start a two-week research collaboration at Seoul National University. It's about fourteen hours nonstop, so business class please if the University allows it. My international travel approval is signed.",
+  "trip": {
+    "traveller_name": "Priya Raman",
+    "traveller_kind": "EMPLOYEE",
+    "traveller_title": "Assistant Professor, Chemical Engineering",
+    "campus": "LSU_A_AND_M",
+    "origin": "DFW",
+    "destination": "ICN",
+    "destination_place": "Seoul, South Korea",
+    "travel_date": "2026-12-12",
+    "return_date": "",
+    "booking_date": "2026-11-24",
+    "purpose": "Research collaboration at Seoul National University",
+    "purpose_kind": "RESEARCH",
+    "latest_arrival_local": "",
+    "requested_cabin": "BUSINESS",
+    "traveller_pays_up_to_cents": 0,
+    "wants_refundable": false,
+    "requested_airline": "",
+    "requested_airline_reason": "NONE",
+    "medical_accommodation": "NONE",
+    "destination_advisory": "NONE",
+    "outside_quote_cents": 0,
+    "agency_fee_cents": 2500,
+    "approvals": [
+      {
+        "role": "SUPERVISOR_OR_FISCAL_AUTHORITY",
+        "name": "Dana Thibodeaux",
+        "subject": "TRIP_AUTHORIZATION",
+        "traveller": "Priya Raman",
+        "signed_on": "2026-11-18"
+      },
+      {
+        "role": "GLOBAL_TRAVEL_DIRECTOR",
+        "name": "Renee Fontenot",
+        "subject": "TRAVEL_OUTSIDE_UNITED_STATES",
+        "traveller": "Priya Raman",
+        "signed_on": "2026-11-18"
+      }
+    ],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "DFW",
+        "destination": "ICN",
+        "date": "2026-12-12",
+        "return_date": "",
+        "flights": {
+          "korean": {
+            "carrier": "KE",
+            "depart": "10:40",
+            "minutes": [
+              845
+            ]
+          },
+          "american": {
+            "carrier": "AA",
+            "depart": "11:50",
+            "minutes": [
+              850
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "korean-economy",
+            "flight": "korean",
+            "cabin": "ECONOMY",
+            "fare_cents": 142000
+          },
+          {
+            "slot": "korean-business",
+            "flight": "korean",
+            "cabin": "BUSINESS",
+            "fare_cents": 151000
+          },
+          {
+            "slot": "american-economy",
+            "flight": "american",
+            "cabin": "ECONOMY",
+            "fare_cents": 149500
+          },
+          {
+            "slot": "american-business",
+            "flight": "american",
+            "cabin": "BUSINESS",
+            "fare_cents": 174000
+          }
+        ],
+        "background": 0
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "korean-business"
+    ],
+    "cabins": [
+      "BUSINESS"
+    ],
+    "reason_codes": [
+      "INTERNATIONAL_LONG_FLIGHT",
+      "LONG_FLIGHT_APPROVED",
+      "UPGRADE_WITHIN_FARE_MARGIN"
+    ],
+    "approvers": [
+      "ENTITY_HEAD_DESIGNEE",
+      "GLOBAL_TRAVEL_DIRECTOR",
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
+    ],
+    "clauses": [
+      "AIR",
+      "APPENDIX_B",
+      "DEFINITIONS",
+      "INTERNATIONAL_TRAVEL",
+      "TRANSPORTATION_METHODS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        423,
+        427
+      ],
+      "sha256": "d78bbf5d66f89cef518dff4890bb7110d125ebaf00d8f12e0905237ef5a8b6e0",
+      "quote": "c. For international travel only, when an international flight segment is more than 10 hours in duration, the University will allow the business class rate, not to exceed 110% of the coach rate. The traveler's itinerary provided by the travel agency must document the flight segment as more than 10 hours and must be attached to the Travel Expense Reimbursement Request/Expense Report.",
+      "why": "international travel only: a segment over 10 hours allows the business rate up to 110% of coach; segments are measured one by one"
+    },
+    {
+      "lines": [
+        102,
+        104
+      ],
+      "sha256": "7c8cb32e9896b6a38808cffcff8235ceb9c25c67b7883a683d2f5f36864beed8",
+      "quote": "M. International Travel - All travel to destinations outside the 50 United States, District of Columbia, Puerto Rico, U.S. Virgin Islands, American Samoa, Guam and Saipan. Entity Head (or designee) approval is required for international travel, as defined in PM-13.",
+      "why": "definition M: international travel is travel outside the 50 states, DC and the listed territories, and needs Entity Head (or designee) approval"
+    },
+    {
+      "lines": [
+        1072,
+        1074
+      ],
+      "sha256": "e66a9c9dcdef286eb8f96fa0d1f04372f2ad36f05df9af9bfef40a2991431251",
+      "quote": "A. All international travel to destinations outside the 50 United States, as defined in PM-13, must be approved by the Entity Head of higher education or (designee) (i.e., the individual who has been delegated this authority on your campus) prior to the departure date.",
+      "why": "Section VIII.A: Entity Head (or designee) approval before departure"
+    },
+    {
+      "lines": [
+        1402,
+        1402
+      ],
+      "sha256": "52975d6a449304baf407f285f74c64b83cd933fbd7dcb9fd63551b1144061d0f",
+      "quote": "LOUISIANA STATE UNIVERSITY AND A&M COLLEGE APPROVAL AUTHORITY",
+      "why": "Appendix B: the LSU A&M approval table"
+    },
+    {
+      "lines": [
+        1452,
+        1456
+      ],
+      "sha256": "ef31650127e349123cdd137c0682ba8ceb840f1e111f2dcc9ae1105dfa581123",
+      "quote": "Person authorized to approve for LSU A&M travel outside the 50 United States and U.S. Territories (Entity Head designee) Director, Global Travel, Safety & Security N/A",
+      "why": "Appendix B, LSU A&M: the Entity Head designee for travel outside the United States"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "International, one 845-minute segment, Korean Air business 151000 against its own coach 142000 (106.3%, within 110%): business (lines 423-427). The American business fare is 116.4% of its coach and dearer anyway. Approvals for travel outside the United States are on file (Appendix B, A&M)."
+}
