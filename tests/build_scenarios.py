@@ -698,7 +698,8 @@ scenario(
 scenario(
     "tallow-orchid", "distractor", [],
     "Minneapolis on Thursday, December 17, for the grant review. My dates might shift, so please get me a refundable "
-    "ticket on the morning Delta flight.",
+    "ticket on the morning Delta flight. If a refundable ticket isn't possible, book what the policy allows; I have to "
+    "be at the review.",
     trip(traveller_name="Olivia Melancon", traveller_title="Assistant Professor, Kinesiology", origin="IAH",
          destination="MSP", destination_place="Minneapolis, Minnesota", travel_date="2026-12-17",
          booking_date="2026-11-25", purpose="Grant review meeting", purpose_kind="MEETING", wants_refundable=True,

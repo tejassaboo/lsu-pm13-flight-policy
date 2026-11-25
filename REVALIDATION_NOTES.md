@@ -46,6 +46,14 @@ The model chose the keyed offer this time, so this is preventive. The request no
 December 11" and the traveller flies "the day before, Thursday, December 10". Same flights, fares, approvals and
 answer; the id is kept.
 
+Review follow-up on `tallow-orchid`: the table above classes its REFUSE as a model slip, but the same answer
+came back on every request in the run that names only an option the handbook forbids (Anixter vesper-dale and
+zinnia-loch, both fixed there as request wording). The model weighed "no ticket at all, or a cheaper non-refundable
+ticket?" and settled on REFUSE because the traveller "specifically wants refundable". To keep the two plugins
+alike, the request now gives the fallback: "If a refundable ticket isn't possible, book what the policy allows; I
+have to be at the review." The key, flights, fares and id are unchanged; the case still tests that the refundable
+fare is declined (line 114).
+
 ## Files changed
 
 - `src/plugin/rules.py`, `verifier/rules.py` (byte-identical): `relied` adds `NONE` to a BOOK's on-file roles.
@@ -56,7 +64,7 @@ answer; the id is kept.
   chicory-anvil, crescent-loom, cypress-ibis, egret-sorghum, heron-cane, hickory-spire, indigo-pelican,
   lotus-garnet, magnolia-levee, mimosa-cairn, muscadine-reef, okra-beacon, palmetto-gale, pecan-marsh,
   pinecone-atlas, sassafras-dune, sorrel-harbor, sumac-bridge, tallow-orchid, tupelo-wren and willow-pirogue.
-  The request was reworded in tupelo-wren, oriole-batture and mimosa-cairn.
+  The request was reworded in tupelo-wren, oriole-batture, mimosa-cairn and tallow-orchid.
 
 World facts are unchanged. `world_diff.py --plugins` against HEAD shows no pinned-search differences; only the
 trip (request) of the two reworded cases differs, plus the 25 answer keys that gained `NONE`.
