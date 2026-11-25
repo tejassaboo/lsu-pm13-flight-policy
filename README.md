@@ -37,41 +37,41 @@ locally with a raised cap.
 - **Output:** `BookingOutput`: `decision`, `offer_id` (empty when refusing), `cabin` (`NONE` when refusing),
   `reason_code`, `approver` and `clause`, each from a closed list. The reason list is the template's shared list
   plus `AGENCY_EXEMPTION_NOT_MET`, `PERSONAL_DESTINATION_NOT_COVERED`, `CANDIDATE_TRIP_NOT_COVERED` and
-  `DOMESTIC_TRAVEL_COACH`. Fares are in cents of US dollars (`currency: USD`).
+  `DOMESTIC_TRAVEL_COACH`, and decoy codes from other handbooks' rules. Fares are in cents of US dollars (`currency: USD`).
 - **Success:** every field is one the answer key accepts. Score = fields right / 6.
 - **Hidden facts:** none (`answer_key_inputs` unused). Whether a trip is international is for the agent to work
   out from definition M and the airports.
 
 | Scenario | Category | Expected decision (offer slot; cabin) | Reason | Approver | Clause (frozen lines) |
 |---|---|---|---|---|---|
-| `bayou-lantern` | easy | BOOK (united-premium; PREMIUM_ECONOMY) | TRAVELER_PAYS_UPGRADE | NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or TRANSPORTATION_METHODS (399-402) |
-| `cypress-ibis` | easy | BOOK (early-economy; ECONOMY) | LOWEST_FARE | NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or DEFINITIONS or TRANSPORTATION_METHODS (113-115, 399-402) |
-| `egret-sorghum` | easy | BOOK (united-business; BUSINESS) | MEDICAL_NEED | NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or TRANSPORTATION_METHODS (402-406) |
-| `magnolia-levee` | easy | BOOK (korean-business; BUSINESS) | INTERNATIONAL_LONG_FLIGHT or LONG_FLIGHT_APPROVED or UPGRADE_WITHIN_FARE_MARGIN | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 423-427, 1072-1074, 1402, 1452-1456) |
-| `pecan-marsh` | easy | BOOK (united-economy; ECONOMY) | LOWEST_FARE or UPGRADE_NOT_ELIGIBLE | NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or DEFINITIONS or TRANSPORTATION_METHODS (157-159, 399-402, 402-406, 429-433) |
-| `tupelo-wren` | easy | BOOK (united-economy; ECONOMY) | LOWEST_FARE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 113-115, 399-402, 1072-1074, 1402, 1452-1456) |
-| `azalea-skiff` | boundary_twin | BOOK (united-economy; ECONOMY) | DOMESTIC_TRAVEL_COACH or LONG_FLIGHT_CONDITION_NOT_MET or LOWEST_FARE or UPGRADE_NOT_ELIGIBLE | NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or DEFINITIONS or TRANSPORTATION_METHODS (102-104, 399-402, 423-427) |
-| `catalpa-ferry` | boundary_twin | BOOK (united-economy; ECONOMY) | LOWEST_FARE or UPGRADE_NOT_ELIGIBLE | NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or TRANSPORTATION_METHODS (399-402, 402-406) |
-| `heron-cane` | boundary_twin | BOOK (ana-business; BUSINESS) | INTERNATIONAL_LONG_FLIGHT or LONG_FLIGHT_APPROVED or UPGRADE_WITHIN_FARE_MARGIN | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 399-402, 423-427, 1072-1074, 1402, 1452-1456) |
-| `indigo-pelican` | boundary_twin | BOOK (united-business; BUSINESS) | TRAVELER_PAYS_UPGRADE | NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or TRANSPORTATION_METHODS (399-402, 402-406) |
-| `palmetto-gale` | boundary_twin | BOOK (ana-economy; ECONOMY) | LONG_FLIGHT_CONDITION_NOT_MET or LOWEST_FARE or UPGRADE_NOT_ELIGIBLE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 399-402, 423-427, 1072-1074, 1402, 1452-1456) |
-| `sassafras-dune` | boundary_twin | BOOK (swiss-economy; ECONOMY) | LONG_FLIGHT_CONDITION_NOT_MET or LOWEST_FARE or UPGRADE_NOT_ELIGIBLE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 423-427, 1072-1074, 1402, 1452-1456) |
-| `sumac-bridge` | boundary_twin | BOOK (united-business; BUSINESS) | INTERNATIONAL_LONG_FLIGHT or LONG_FLIGHT_APPROVED or UPGRADE_WITHIN_FARE_MARGIN | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 423-427, 1072-1074, 1402, 1452-1456) |
-| `willow-pirogue` | boundary_twin | BOOK (swiss-business; BUSINESS) | INTERNATIONAL_LONG_FLIGHT or LONG_FLIGHT_APPROVED or UPGRADE_WITHIN_FARE_MARGIN | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 423-427, 1072-1074, 1402, 1452-1456) |
-| `bramble-quay` | multi_rule | BOOK (aeromexico-economy; ECONOMY) | LOWEST_FARE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or PROVOST or SUPERVISOR_OR_FISCAL_AUTHORITY or VICE_PROVOST | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (95-99, 102-104, 113-115, 399-402, 1072-1074, 1075-1080, 1402, 1444-1447, 1452-1456) |
-| `chicory-anvil` | multi_rule | BOOK (qantas-business; BUSINESS) | INTERNATIONAL_LONG_FLIGHT or LONG_FLIGHT_APPROVED or TRAVELER_PAYS_UPGRADE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 399-402, 423-427, 1072-1074, 1402, 1452-1456) |
-| `crescent-loom` | multi_rule | BOOK (korean-economy; ECONOMY) | LOWEST_FARE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 113-115, 369-371, 399-402, 1072-1074, 1402, 1452-1456) |
-| `hickory-spire` | multi_rule | BOOK (aircanada-economy; ECONOMY) | LONG_FLIGHT_CONDITION_NOT_MET or LOWEST_FARE or UPGRADE_NOT_ELIGIBLE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 399-402, 423-427, 1072-1074, 1402, 1452-1456) |
-| `okra-beacon` | multi_rule | BOOK (american-business; BUSINESS) | NO_ECONOMY_SEATS_URGENT | BOOKING_AGENCY or NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or TRANSPORTATION_METHODS (369-371, 399-402, 406-408) |
-| `lotus-garnet` | hidden_clause | BOOK (alaska-economy; ECONOMY) | LOWEST_FARE | NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or DEFINITIONS or TRANSPORTATION_METHODS or VISITORS (113-115, 399-402, 1183-1187) |
-| `mimosa-cairn` | hidden_clause | BOOK (american-business; BUSINESS) | MEDICAL_NEED | NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or TRANSPORTATION_METHODS (61-62, 402-406) |
-| `sorrel-harbor` | hidden_clause | BOOK (united-economy; ECONOMY) | LOWEST_FARE or LOYALTY_PROGRAM_PREFERENCE | NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or DEFINITIONS or TRANSPORTATION_METHODS (113-115, 399-402, 440-444) |
-| `muscadine-reef` | distractor | BOOK (southwest-economy; ECONOMY) | LOWEST_FARE | NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or DEFINITIONS or TRANSPORTATION_METHODS (113-115, 399-402, 468-470) |
-| `pinecone-atlas` | distractor | BOOK (united-economy; ECONOMY) | AGENCY_EXEMPTION_NOT_MET or LOWEST_FARE | NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or CONTRACT_TRAVEL_SERVICES or DEFINITIONS or TRANSPORTATION_METHODS (113-115, 198-201, 399-402) |
-| `tallow-orchid` | distractor | BOOK (delta-economy; ECONOMY) | LOWEST_FARE or REFUNDABLE_FARE_NOT_ALLOWED | NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or DEFINITIONS or TRANSPORTATION_METHODS (113-115, 399-402) |
-| `nutria-prism` | refusal | REFUSE (none; NONE) | PERSONAL_DESTINATION_NOT_COVERED or PERSONAL_TRAVEL_NOT_COVERED | NONE | AIR or AUTHORIZATION or TRANSPORTATION_METHODS (241-243, 458-460) |
-| `spartina-kiln` | refusal | REFUSE (none; NONE) | CANDIDATE_TRIP_NOT_COVERED or OUTSIDE_POLICY_SCOPE or PERSONAL_TRAVEL_NOT_COVERED | NONE | VISITORS (1187-1190) |
-| `willet-copper` | refusal | REFUSE (none; NONE) | COMPANION_NOT_COVERED or OUTSIDE_POLICY_SCOPE | NONE | DEFINITIONS or RECOGNIZED_PURPOSES or SPECIAL_MEALS (209-212, 1202) |
+| `bayou-lantern` | easy | BOOK (united-premium; PREMIUM_ECONOMY) | TRAVELER_PAYS_UPGRADE | SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or TRANSPORTATION_METHODS (399-402) |
+| `cypress-ibis` | easy | BOOK (early-economy; ECONOMY) | LOWEST_FARE | SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or DEFINITIONS or TRANSPORTATION_METHODS (113-115, 399-402) |
+| `egret-sorghum` | easy | BOOK (united-business; BUSINESS) | MEDICAL_NEED | SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or TRANSPORTATION_METHODS (402-406) |
+| `magnolia-levee` | easy | BOOK (korean-business; BUSINESS) | INTERNATIONAL_LONG_FLIGHT or LONG_FLIGHT_APPROVED or UPGRADE_WITHIN_FARE_MARGIN | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 423-427, 1072-1074, 1402, 1452-1456) |
+| `pecan-marsh` | easy | BOOK (united-economy; ECONOMY) | LOWEST_FARE or UPGRADE_NOT_ELIGIBLE | SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or DEFINITIONS or TRANSPORTATION_METHODS (157-159, 399-402, 402-406, 429-433) |
+| `tupelo-wren` | easy | BOOK (united-economy; ECONOMY) | LOWEST_FARE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 113-115, 399-402, 1072-1074, 1402, 1452-1456) |
+| `azalea-skiff` | boundary_twin | BOOK (united-economy; ECONOMY) | DOMESTIC_TRAVEL_COACH or LONG_FLIGHT_CONDITION_NOT_MET or LOWEST_FARE or UPGRADE_NOT_ELIGIBLE | SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or DEFINITIONS or TRANSPORTATION_METHODS (102-104, 399-402, 423-427) |
+| `catalpa-ferry` | boundary_twin | BOOK (united-economy; ECONOMY) | LOWEST_FARE or UPGRADE_NOT_ELIGIBLE | SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or TRANSPORTATION_METHODS (399-402, 402-406) |
+| `heron-cane` | boundary_twin | BOOK (ana-business; BUSINESS) | INTERNATIONAL_LONG_FLIGHT or LONG_FLIGHT_APPROVED or UPGRADE_WITHIN_FARE_MARGIN | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 399-402, 423-427, 1072-1074, 1402, 1452-1456) |
+| `indigo-pelican` | boundary_twin | BOOK (united-business; BUSINESS) | TRAVELER_PAYS_UPGRADE | SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or TRANSPORTATION_METHODS (399-402, 402-406) |
+| `palmetto-gale` | boundary_twin | BOOK (ana-economy; ECONOMY) | LONG_FLIGHT_CONDITION_NOT_MET or LOWEST_FARE or UPGRADE_NOT_ELIGIBLE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 399-402, 423-427, 1072-1074, 1402, 1452-1456) |
+| `sassafras-dune` | boundary_twin | BOOK (swiss-economy; ECONOMY) | LONG_FLIGHT_CONDITION_NOT_MET or LOWEST_FARE or UPGRADE_NOT_ELIGIBLE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 423-427, 1072-1074, 1402, 1452-1456) |
+| `sumac-bridge` | boundary_twin | BOOK (united-business; BUSINESS) | INTERNATIONAL_LONG_FLIGHT or LONG_FLIGHT_APPROVED or UPGRADE_WITHIN_FARE_MARGIN | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 423-427, 1072-1074, 1402, 1452-1456) |
+| `willow-pirogue` | boundary_twin | BOOK (swiss-business; BUSINESS) | INTERNATIONAL_LONG_FLIGHT or LONG_FLIGHT_APPROVED or UPGRADE_WITHIN_FARE_MARGIN | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 423-427, 1072-1074, 1402, 1452-1456) |
+| `bramble-quay` | multi_rule | BOOK (aeromexico-economy; ECONOMY) | LOWEST_FARE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or PROVOST or SUPERVISOR_OR_FISCAL_AUTHORITY or VICE_PROVOST | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (95-99, 102-104, 113-115, 399-402, 1072-1074, 1075-1080, 1402, 1444-1447, 1452-1456) |
+| `chicory-anvil` | multi_rule | BOOK (qantas-business; BUSINESS) | INTERNATIONAL_LONG_FLIGHT or LONG_FLIGHT_APPROVED or TRAVELER_PAYS_UPGRADE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 399-402, 423-427, 1072-1074, 1402, 1452-1456) |
+| `crescent-loom` | multi_rule | BOOK (korean-economy; ECONOMY) | LOWEST_FARE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 113-115, 369-371, 399-402, 1072-1074, 1402, 1452-1456) |
+| `hickory-spire` | multi_rule | BOOK (aircanada-economy; ECONOMY) | LONG_FLIGHT_CONDITION_NOT_MET or LOWEST_FARE or UPGRADE_NOT_ELIGIBLE | ENTITY_HEAD_DESIGNEE or GLOBAL_TRAVEL_DIRECTOR or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL or TRANSPORTATION_METHODS (102-104, 399-402, 423-427, 1072-1074, 1402, 1452-1456) |
+| `okra-beacon` | multi_rule | BOOK (american-business; BUSINESS) | NO_ECONOMY_SEATS_URGENT | BOOKING_AGENCY or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or TRANSPORTATION_METHODS (369-371, 399-402, 406-408) |
+| `lotus-garnet` | hidden_clause | BOOK (alaska-economy; ECONOMY) | LOWEST_FARE | SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or DEFINITIONS or TRANSPORTATION_METHODS or VISITORS (113-115, 399-402, 1183-1187) |
+| `mimosa-cairn` | hidden_clause | BOOK (american-business; BUSINESS) | MEDICAL_NEED | SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or TRANSPORTATION_METHODS (61-62, 402-406) |
+| `sorrel-harbor` | hidden_clause | BOOK (united-economy; ECONOMY) | LOWEST_FARE or LOYALTY_PROGRAM_PREFERENCE | SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or DEFINITIONS or TRANSPORTATION_METHODS (113-115, 399-402, 440-444) |
+| `muscadine-reef` | distractor | BOOK (southwest-economy; ECONOMY) | LOWEST_FARE | SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or DEFINITIONS or TRANSPORTATION_METHODS (113-115, 399-402, 468-470) |
+| `pinecone-atlas` | distractor | BOOK (united-economy; ECONOMY) | AGENCY_EXEMPTION_NOT_MET or LOWEST_FARE | SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or CONTRACT_TRAVEL_SERVICES or DEFINITIONS or TRANSPORTATION_METHODS (113-115, 198-201, 399-402) |
+| `tallow-orchid` | distractor | BOOK (delta-economy; ECONOMY) | LOWEST_FARE or REFUNDABLE_FARE_NOT_ALLOWED | SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or DEFINITIONS or TRANSPORTATION_METHODS (113-115, 399-402) |
+| `nutria-prism` | refusal | REFUSE (none; NONE) | PERSONAL_DESTINATION_NOT_COVERED or PERSONAL_TRAVEL_NOT_COVERED | NONE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or AUTHORIZATION or TRANSPORTATION_METHODS (241-243, 458-460) |
+| `spartina-kiln` | refusal | REFUSE (none; NONE) | CANDIDATE_TRIP_NOT_COVERED or OUTSIDE_POLICY_SCOPE or PERSONAL_TRAVEL_NOT_COVERED | NONE | RECOGNIZED_PURPOSES or VISITORS (1187-1190) |
+| `willet-copper` | refusal | REFUSE (none; NONE) | COMPANION_NOT_COVERED or OUTSIDE_POLICY_SCOPE | NONE | AUTHORIZATION or DEFINITIONS or RECOGNIZED_PURPOSES or SPECIAL_MEALS (209-212, 1202) |
 | `cattail-ember` | flag | FLAG_FOR_APPROVAL (american-economy, american-premium; ECONOMY or PREMIUM_ECONOMY) | UNCLEAR_POLICY_TEXT | NOT_NAMED or PRESIDENT_OR_DESIGNEE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or DEFINITIONS or TRANSPORTATION_METHODS (43-44, 157-159, 399-402, 402-406, 429-433) |
 | `dogwood-tern` | flag | FLAG_FOR_APPROVAL (airnz-business, airnz-economy; BUSINESS or ECONOMY) | UNCLEAR_POLICY_TEXT | NOT_NAMED or PRESIDENT_OR_DESIGNEE or SUPERVISOR_OR_FISCAL_AUTHORITY | AIR or TRANSPORTATION_METHODS (43-44, 399-402, 423-427) |
 | `oriole-batture` | flag | FLAG_FOR_APPROVAL (united-economy; ECONOMY) | APPROVAL_REQUIRED | CHANCELLOR or ENTITY_HEAD_DESIGNEE | APPENDIX_B or DEFINITIONS or INTERNATIONAL_TRAVEL (102-104, 399-402, 1072-1074, 1471, 1511-1514) |
@@ -90,12 +90,15 @@ above 110% but not the whole difference (`dogwood-tern`; twins `heron-cane`, `pa
 premium economy seat is a "preferred seat" (definition V and lines 429-433) or an upgrade (`cattail-ember`;
 twins `pecan-marsh`, `bayou-lantern`). `oriole-batture` (LSU Alexandria: the Chancellor, Appendix B) and
 `plover-cistern` (a Do Not Travel region: the Provost or Vice Provost) are approval-required holds, never the
-same as "no compliant offer". On a BOOK the approver accepts `NONE` and the supervisor or fiscal authority whose
-trip authorization the booking relies on (lines 232-237), plus, for travel outside the United States, the
+same as "no compliant offer". The approver is the role whose sign-off the decision relies on, on file or awaited.
+On a BOOK it is the supervisor or fiscal authority whose trip authorization the booking relies on (lines
+232-237; never `NONE`), plus, for travel outside the United States, the
 Entity Head designee and the campus's Appendix B title (and the high-risk approvers where one was needed). The
 cabin is graded as the chosen offer's own cabin. Degenerate agents: always-flag passes 2 (the two unclear-word
-holds, given the held offer), always-book-the-cheapest-seat passes 14 (the cases whose answer is the cheapest
-seat listed).
+holds, given the held offer), always-book-the-cheapest-seat with approver `NONE` passes none (with the supervisor or
+fiscal authority it would pass the 14 cases whose answer is the cheapest seat listed). A refusal accepts `NONE`,
+and also the supervisor or fiscal authority when a trip authorization it does not use is on file
+(`nutria-prism`).
 
 Duration (`rules.over`): per segment, as the agency's itinerary documents it ("an international flight segment
 is more than 10 hours in duration", lines 423-427), strictly over 600 scheduled minutes, out and back; segments
@@ -104,10 +107,13 @@ the segment an international one is decided in `rules.solve`, which raises on co
 long domestic segment on an international trip, a ticket mixing long and short segments). Background offers:
 three per search (the four international economy cases included), none on the ten long-haul business
 requests, where a background routing could cross the 600-minute line, or where an arrival deadline makes
-timing matter (`crescent-loom`, `okra-beacon`).
+timing matter (`crescent-loom`, `okra-beacon`). Background offers appear only on a scenario's own searches
+(`handbook.json` `background_offers` is 0): a search the case does not pin lists nothing and says so.
 
-The world has no Louisiana airport, so travellers leave from Houston (IAH) or from where their trip takes them,
-and inbound visitors fly into Houston; the trip record's `destination_place` names the real place of business.
+The scenarios were written when the world had no Louisiana airport, so travellers leave from Houston (IAH) or
+from where their trip takes them, and inbound visitors fly into Houston; the trip record's `destination_place`
+names the real place of business. The shared world now has MSY, BTR, SHV and AEX, but the scenarios still use
+Houston: moving them would change audited answers.
 
 ## Tools
 
@@ -115,7 +121,7 @@ and inbound visitors fly into Houston; the trip record's `destination_place` nam
 |---|---|---|
 | `booking_requirements` | The trip record's fields, the world's conventions (local times, dates, fares, sold-out seats) and its airports | `src/plugin/guide.py` |
 | `get_trip` | A case's request and trip record: traveller, route, dates, purpose, campus, requested cabin, what the traveller will pay, approvals on file, notes | `src/plugin/tools.py` |
-| `search_flights` | Every offer on a route and local date (one way, or round trip with `return_date`): pinned scenario offers plus seeded background offers | `src/plugin/world.py` |
+| `search_flights` | Every offer on a route and local date (one way, or round trip with `return_date`): the pinned scenario offers plus seeded background offers on those searches only; a search the case does not pin lists nothing and says so | `src/plugin/world.py` |
 | `solve_booking` | The answer key (`rules.solve`), the agent task's `reference`, never shown to the agent | `src/plugin/rules.py` |
 
 | Task | Does | Runner |

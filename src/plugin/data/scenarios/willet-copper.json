@@ -69,7 +69,8 @@
             "cabin": "ECONOMY",
             "fare_cents": 31900
           }
-        ]
+        ],
+        "background": 3
       }
     ]
   },
@@ -87,6 +88,7 @@
       "NONE"
     ],
     "clauses": [
+      "AUTHORIZATION",
       "DEFINITIONS",
       "RECOGNIZED_PURPOSES",
       "SPECIAL_MEALS"

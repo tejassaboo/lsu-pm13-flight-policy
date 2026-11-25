@@ -100,7 +100,8 @@
             "cabin": "ECONOMY",
             "fare_cents": 56000
           }
-        ]
+        ],
+        "background": 3
       }
     ]
   },
@@ -116,7 +117,6 @@
       "TRAVELER_PAYS_UPGRADE"
     ],
     "approvers": [
-      "NONE",
       "SUPERVISOR_OR_FISCAL_AUTHORITY"
     ],
     "clauses": [

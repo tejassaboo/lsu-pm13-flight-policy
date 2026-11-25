@@ -164,8 +164,9 @@ def expected(decision, slots, cabins, reasons, approvers, clauses, phrase=""):
 def search(origin, destination, date, flights, offers, return_date="", background=None, name="main"):
     data = {"name": name, "origin": origin, "destination": destination, "date": date, "return_date": return_date,
             "flights": flights, "offers": offers}
-    if background is not None:
-        data["background"] = background
+    # Background offers only on the scenario's own searches (handbook.json background_offers is 0, so a search
+    # the scenario does not pin lists nothing): 3 unless the scenario sets its own number.
+    data["background"] = 3 if background is None else background
     return data
 
 
@@ -182,7 +183,9 @@ def scenario(id, category, overlays, request, trip_, searches, exp, must_keep, n
     })
 
 
-BASE = ["NONE", "SUPERVISOR_OR_FISCAL_AUTHORITY"]
+# Every booking relies on the trip authorization on file (lines 232-237): its role, never NONE (template approver
+# wording after the 2026-11-24 validation).
+BASE = ["SUPERVISOR_OR_FISCAL_AUTHORITY"]
 AM_ABROAD = [*BASE, "ENTITY_HEAD_DESIGNEE", "GLOBAL_TRAVEL_DIRECTOR"]
 LOW_CLAUSES = ["AIR", "DEFINITIONS", "TRANSPORTATION_METHODS"]
 ABROAD_CLAUSES = ["INTERNATIONAL_TRAVEL", "DEFINITIONS", "APPENDIX_B"]
@@ -525,7 +528,8 @@ scenario(
     trip(traveller_name="Joseph Fontenot", traveller_title="Professor, Coastal Ecology", origin="IAH",
          destination="DCA", destination_place="Washington, District of Columbia", travel_date="2026-12-03",
          booking_date="2026-11-30", purpose="Testimony at a congressional committee hearing", purpose_kind="MEETING",
-         latest_arrival_local="2026-12-03 12:00", approvals=[auth("Joseph Fontenot", "2026-11-27")]),
+         latest_arrival_local="2026-12-03 12:00", approvals=[auth("Joseph Fontenot", "2026-11-27")],
+         notes=["Professor Fontenot cannot leave Houston before Thursday, December 3."]),
     [search("IAH", "DCA", "2026-12-03",
             {"american": {"carrier": "AA", "depart": "06:30", "minutes": [175]},
              "united": {"carrier": "UA", "depart": "07:15", "minutes": [175]},
@@ -749,7 +753,7 @@ scenario(
             {"united": {"carrier": "UA", "depart": "09:40"}, "alaska": {"carrier": "AS", "depart": "12:05"}},
             [offer("united-economy", "united", "ECONOMY", 30_200), offer("alaska-economy", "alaska", "ECONOMY", 31_900)])],
     expected("REFUSE", [], ["NONE"], ["COMPANION_NOT_COVERED", "OUTSIDE_POLICY_SCOPE"], ["NONE"],
-             ["SPECIAL_MEALS", "RECOGNIZED_PURPOSES", "DEFINITIONS"]),
+             ["SPECIAL_MEALS", "RECOGNIZED_PURPOSES", "DEFINITIONS", "AUTHORIZATION"]),
     [FAMILY, PURPOSES],
     "Line 1202: expenses for spouses and children of employees may not be paid by public funds; an employee's "
     "spouse is no traveller the University funds (lines 209-226). Refuse.", twin_of="lotus-garnet",
@@ -769,7 +773,8 @@ scenario(
             {"southwest": {"carrier": "WN", "depart": "11:15"}, "united": {"carrier": "UA", "depart": "15:30"}},
             [offer("southwest-economy", "southwest", "ECONOMY", 12_900),
              offer("united-economy", "united", "ECONOMY", 14_400)])],
-    expected("REFUSE", [], ["NONE"], ["PERSONAL_DESTINATION_NOT_COVERED", "PERSONAL_TRAVEL_NOT_COVERED"], ["NONE"],
+    expected("REFUSE", [], ["NONE"], ["PERSONAL_DESTINATION_NOT_COVERED", "PERSONAL_TRAVEL_NOT_COVERED"],
+             ["NONE", "SUPERVISOR_OR_FISCAL_AUTHORITY"],
              ["AIR", "AUTHORIZATION", "TRANSPORTATION_METHODS"]),
     [PERSONAL_DEST, NO_PERSONAL],
     "Las Vegas is a personal destination: the University cannot pay for airfare to it (lines 458-460, 241-243). "
@@ -792,7 +797,7 @@ scenario(
             {"united": {"carrier": "UA", "depart": "08:30"}, "american": {"carrier": "AA", "depart": "10:45"}},
             [offer("united-economy", "united", "ECONOMY", 22_600), offer("american-economy", "american", "ECONOMY", 23_400)])],
     expected("REFUSE", [], ["NONE"], ["CANDIDATE_TRIP_NOT_COVERED", "OUTSIDE_POLICY_SCOPE", "PERSONAL_TRAVEL_NOT_COVERED"],
-             ["NONE"], ["VISITORS"]),
+             ["NONE"], ["VISITORS", "RECOGNIZED_PURPOSES"]),
     [VISIT_ONLY],
     "Lines 1187-1190: travel expenses may not be paid or reimbursed to candidates for employment except for "
     "interviews and/or official business trips; a house-hunting visit is neither. Refuse.")

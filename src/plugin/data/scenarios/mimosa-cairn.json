@@ -93,7 +93,8 @@
             "cabin": "BUSINESS",
             "fare_cents": 69900
           }
-        ]
+        ],
+        "background": 3
       }
     ]
   },
@@ -109,7 +110,6 @@
       "MEDICAL_NEED"
     ],
     "approvers": [
-      "NONE",
       "SUPERVISOR_OR_FISCAL_AUTHORITY"
     ],
     "clauses": [

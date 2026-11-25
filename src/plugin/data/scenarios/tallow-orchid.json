@@ -79,7 +79,8 @@
             "cabin": "ECONOMY",
             "fare_cents": 28800
           }
-        ]
+        ],
+        "background": 3
       }
     ]
   },
@@ -96,7 +97,6 @@
       "REFUNDABLE_FARE_NOT_ALLOWED"
     ],
     "approvers": [
-      "NONE",
       "SUPERVISOR_OR_FISCAL_AUTHORITY"
     ],
     "clauses": [

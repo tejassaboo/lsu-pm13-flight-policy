@@ -42,7 +42,9 @@
         "signed_on": "2026-11-27"
       }
     ],
-    "notes": []
+    "notes": [
+      "Professor Fontenot cannot leave Houston before Thursday, December 3."
+    ]
   },
   "world": {
     "searches": [
@@ -126,7 +128,6 @@
     ],
     "approvers": [
       "BOOKING_AGENCY",
-      "NONE",
       "SUPERVISOR_OR_FISCAL_AUTHORITY"
     ],
     "clauses": [

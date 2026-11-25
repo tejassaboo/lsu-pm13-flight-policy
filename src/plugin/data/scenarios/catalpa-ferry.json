@@ -80,7 +80,8 @@
             "cabin": "ECONOMY",
             "fare_cents": 29900
           }
-        ]
+        ],
+        "background": 3
       }
     ]
   },
@@ -97,7 +98,6 @@
       "UPGRADE_NOT_ELIGIBLE"
     ],
     "approvers": [
-      "NONE",
       "SUPERVISOR_OR_FISCAL_AUTHORITY"
     ],
     "clauses": [

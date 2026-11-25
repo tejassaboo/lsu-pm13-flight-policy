@@ -88,7 +88,8 @@
             "cabin": "ECONOMY",
             "fare_cents": 41200
           }
-        ]
+        ],
+        "background": 3
       }
     ]
   },
@@ -106,7 +107,6 @@
     "approvers": [
       "ENTITY_HEAD_DESIGNEE",
       "GLOBAL_TRAVEL_DIRECTOR",
-      "NONE",
       "PROVOST",
       "SUPERVISOR_OR_FISCAL_AUTHORITY",
       "VICE_PROVOST"

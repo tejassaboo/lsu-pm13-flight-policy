@@ -76,7 +76,8 @@
             "cabin": "ECONOMY",
             "fare_cents": 14400
           }
-        ]
+        ],
+        "background": 3
       }
     ]
   },
@@ -91,7 +92,8 @@
       "PERSONAL_TRAVEL_NOT_COVERED"
     ],
     "approvers": [
-      "NONE"
+      "NONE",
+      "SUPERVISOR_OR_FISCAL_AUTHORITY"
     ],
     "clauses": [
       "AIR",

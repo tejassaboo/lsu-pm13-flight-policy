@@ -76,7 +76,8 @@
             "cabin": "ECONOMY",
             "fare_cents": 24800
           }
-        ]
+        ],
+        "background": 3
       }
     ]
   },
@@ -92,7 +93,6 @@
       "LOWEST_FARE"
     ],
     "approvers": [
-      "NONE",
       "SUPERVISOR_OR_FISCAL_AUTHORITY"
     ],
     "clauses": [

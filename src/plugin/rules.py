@@ -197,6 +197,11 @@ def solve(trip, offers, hidden):
         raise ValueError("this handbook's scenarios carry no answer_key_inputs")
     refused = who_and_why(trip)
     if refused is not None:
+        if any(record.subject == ApprovalSubject.TRIP_AUTHORIZATION for record in trip.approvals):
+            # A trip authorization on file that the refusal does not use (nutria-prism: it covers the meeting, not
+            # the personal leg): the refusal relies on no one's sign-off, but readers split, so its role is
+            # accepted beside NONE.
+            refused["approvers"] = by_value([*refused["approvers"], Approver.SUPERVISOR_OR_FISCAL_AUTHORITY])
         return refused
     if not signed(trip, ApprovalSubject.TRIP_AUTHORIZATION, {Approver.SUPERVISOR_OR_FISCAL_AUTHORITY}):
         raise ValueError("a trip without its travel authorization (lines 232-237) is not modelled")
@@ -209,12 +214,14 @@ def solve(trip, offers, hidden):
         # Lines 1183-1188: a candidate's (and the candidate's spouse's) interview travel, authorized in writing.
         booking["clauses"] = by_value([*booking["clauses"], Clause.VISITORS])
         booking["explanation"] += " Lines 1183-1188: interview travel for a candidate, and for the spouse, authorized."
-    base = [Approver.NONE, Approver.SUPERVISOR_OR_FISCAL_AUTHORITY]  # lines 232-237: the trip's authorization
+    # Lines 232-237: every booking relies on the trip's authorization, on file (checked above), so its role is
+    # accepted and NONE ("relies on no one's sign-off") is not.
+    base = [Approver.SUPERVISOR_OR_FISCAL_AUTHORITY]
     if not international:
         if trip.destination_advisory != Advisory.NONE:
             raise ValueError("a travel advisory on a domestic trip is not modelled")
         if booking["decision"] == Decision.BOOK:
-            booking["approvers"] = by_value([*booking["approvers"], *base])
+            booking["approvers"] = relied([*booking["approvers"], *base])
         return booking
     return outside_us(trip, booking, base)
 
@@ -224,14 +231,14 @@ def who_and_why(trip):
     kind, purpose = trip.traveller_kind, trip.purpose_kind
     if kind in (TravellerKind.SPOUSE_OF_EMPLOYEE, TravellerKind.CHILD_OF_EMPLOYEE):
         return refuse([ReasonCode.COMPANION_NOT_COVERED, ReasonCode.OUTSIDE_POLICY_SCOPE],
-                      [Clause.SPECIAL_MEALS, Clause.RECOGNIZED_PURPOSES, Clause.DEFINITIONS],
+                      [Clause.SPECIAL_MEALS, Clause.RECOGNIZED_PURPOSES, Clause.DEFINITIONS, Clause.AUTHORIZATION],
                       "Line 1202: expenses for spouses and children of employees may not be paid by public funds; "
                       "lines 209-226 list the travel the University funds, and an employee's family is not in it.")
     if purpose == Purpose.HOUSING_SEARCH:
         if kind not in (TravellerKind.JOB_CANDIDATE, TravellerKind.SPOUSE_OF_JOB_CANDIDATE):
             raise ValueError("a housing trip by anyone but a candidate is not modelled")
         return refuse([ReasonCode.CANDIDATE_TRIP_NOT_COVERED, ReasonCode.OUTSIDE_POLICY_SCOPE,
-                       ReasonCode.PERSONAL_TRAVEL_NOT_COVERED], [Clause.VISITORS],
+                       ReasonCode.PERSONAL_TRAVEL_NOT_COVERED], [Clause.VISITORS, Clause.RECOGNIZED_PURPOSES],
                       "Lines 1188-1190: travel expenses may not be paid or reimbursed to candidates for employment "
                       "except for interviews and/or official business trips; a housing visit is neither.")
     if purpose == Purpose.PERSONAL:
@@ -244,6 +251,11 @@ def who_and_why(trip):
                     TravellerKind.SPOUSE_OF_JOB_CANDIDATE):
         raise ValueError(f"a {kind.value} traveller is not modelled")
     return None
+
+
+def relied(approvers):
+    """A booking's accepted approvers: the roles whose sign-offs it relies on, without NONE."""
+    return by_value([role for role in approvers if role != Approver.NONE])
 
 
 def outside_us(trip, booking, base):
@@ -278,9 +290,8 @@ def outside_us(trip, booking, base):
         }
         return held
     if booking["decision"] == Decision.BOOK:
-        relied = [*booking["approvers"], *base, Approver.ENTITY_HEAD_DESIGNEE, *designees,
-                  *(risk_roles if high_risk else ())]
-        booking["approvers"] = by_value(relied)
+        booking["approvers"] = relied([*booking["approvers"], *base, Approver.ENTITY_HEAD_DESIGNEE, *designees,
+                                       *(risk_roles if high_risk else ())])
         booking["clauses"] = by_value([*booking["clauses"], *clauses])
     return booking
 
