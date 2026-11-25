@@ -189,7 +189,10 @@ BASE = ["NONE", "SUPERVISOR_OR_FISCAL_AUTHORITY"]
 AM_ABROAD = [*BASE, "ENTITY_HEAD_DESIGNEE", "GLOBAL_TRAVEL_DIRECTOR"]
 LOW_CLAUSES = ["AIR", "DEFINITIONS", "TRANSPORTATION_METHODS"]
 ABROAD_CLAUSES = ["INTERNATIONAL_TRAVEL", "DEFINITIONS", "APPENDIX_B"]
-LOW_REASONS = ["UPGRADE_NOT_ELIGIBLE", "LOWEST_FARE"]
+# A booking that declines the cabin asked for gives the reason the request is declined (task instructions): line
+# 402's ban on upgrades at University expense, not the lowest-fare rule, so LOWEST_FARE is not accepted on it
+# (template APPROVER_REVIEW, declined requests). The name is kept from when it held both codes.
+LOW_REASONS = ["UPGRADE_NOT_ELIGIBLE"]
 AM_ABROAD_KEEP = [INTL_DEF, INTL_RULE, AM_TABLE, AM_INTL]
 
 
@@ -687,7 +690,7 @@ scenario(
              "jetblue": {"carrier": "B6", "depart": "12:20", "return": {"depart": "19:45"}}},
             [offer("united-economy", "united", "ECONOMY", 98_000), offer("delta-economy", "delta", "ECONOMY", 101_500),
              offer("jetblue-economy", "jetblue", "ECONOMY", 99_900)], return_date="2027-02-11")],
-    expected("BOOK", ["united-economy"], ["ECONOMY"], ["LOWEST_FARE", "AGENCY_EXEMPTION_NOT_MET"], BASE,
+    expected("BOOK", ["united-economy"], ["ECONOMY"], ["AGENCY_EXEMPTION_NOT_MET"], BASE,
              [*LOW_CLAUSES, "CONTRACT_TRAVEL_SERVICES"]),
     [AGENCY, COACH, LOWEST],
     "An exemption needs a 10% saving and at least $200 \"not including the travel agency service fee\" (lines "

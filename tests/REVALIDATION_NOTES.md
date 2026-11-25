@@ -68,3 +68,22 @@ fare is declined (line 114).
 
 World facts are unchanged. `world_diff.py --plugins` against HEAD shows no pinned-search differences; only the
 trip (request) of the two reworded cases differs, plus the 25 answer keys that gained `NONE`.
+
+## Declined requests (lead's decision after the review, template APPROVER_REVIEW.md)
+
+The booking task's instructions now end: "When you book something other than what the traveller asked for, the
+reason code gives why their request is declined." Accept sets follow it:
+
+- Bookings that decline the cabin asked for no longer accept `LOWEST_FARE`: azalea-skiff, hickory-spire,
+  palmetto-gale, sassafras-dune, catalpa-ferry (business) and pecan-marsh (premium economy). The ground is line
+  402 ("Upgrades at the expense of the University are not permitted unless ...") and lines 423-427, so they accept
+  `UPGRADE_NOT_ELIGIBLE`, with `LONG_FLIGHT_CONDITION_NOT_MET` and `DOMESTIC_TRAVEL_COACH` where they apply. The
+  paid run gave one of those codes on all five of these it scored.
+- pinecone-atlas (buy direct from the airline) is declined by the exemption tests of lines 198-201, so it accepts
+  `AGENCY_EXEMPTION_NOT_MET` only.
+- sorrel-harbor (Delta for status) and tallow-orchid (refundable fare) are declined by the lowest-fare rule itself
+  (lines 113-117, 440-444), so `LOWEST_FARE` stays beside the specific code.
+- Untouched, nothing asked for is declined: bramble-quay, crescent-loom, cypress-ibis, lotus-garnet,
+  muscadine-reef, tupelo-wren, and every booking of the cabin asked for.
+
+`MAX_PASS_ALWAYS_LOWEST` goes from 14 to 7 of 32 (measured).

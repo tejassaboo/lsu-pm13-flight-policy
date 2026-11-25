@@ -90,7 +90,6 @@
     "reason_codes": [
       "DOMESTIC_TRAVEL_COACH",
       "LONG_FLIGHT_CONDITION_NOT_MET",
-      "LOWEST_FARE",
       "UPGRADE_NOT_ELIGIBLE"
     ],
     "approvers": [

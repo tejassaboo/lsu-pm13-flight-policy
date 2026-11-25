@@ -52,7 +52,10 @@ ID_CATEGORY_ENUMS = [contract.TravellerKind, contract.Campus, contract.Purpose, 
 # cheapest seat listed; set to what it passes (see README). The always-flag agent passes the two holds over
 # unclear words (it is given the held offer); the two approval holds need APPROVAL_REQUIRED and the approver.
 MAX_PASS_ALWAYS_FLAG = 2
-MAX_PASS_ALWAYS_LOWEST = 14  # NONE is accepted beside the on-file sign-offs on a booking (SYNC_NOTES 4')
+# NONE is accepted beside the on-file sign-offs on a booking (SYNC_NOTES 4'); LOWEST_FARE is not accepted on a
+# booking that declines the cabin or the purchase channel asked for (template APPROVER_REVIEW, declined requests).
+# It passes bramble-quay, cypress-ibis, lotus-garnet, muscadine-reef, sorrel-harbor, tallow-orchid, tupelo-wren.
+MAX_PASS_ALWAYS_LOWEST = 7
 
 # Hand-built duration cases beyond the automatic both-sides tests: (rule, outbound scheduled minutes per
 # flight, layovers, expected True / False). PM-13 measures each segment on its own and never adds segments or

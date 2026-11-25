@@ -353,7 +353,13 @@ def economy(trip, usable, coach, extras, clauses):
         raise ValueError("an economy request whose cheapest offer is another cabin is not modelled")
     if any(offer.refundable for offer in coach):
         raise ValueError("a refundable lowest fare is not modelled")
-    reasons, notes = [ReasonCode.LOWEST_FARE, *extras], []
+    # A booking that declines what the traveller asked for gives the reason the request is declined (task
+    # instructions). A refundable fare or a dearer loyalty airline is declined by the lowest-fare rule itself
+    # (lines 113-117, 440-444), so LOWEST_FARE stays beside the specific code. Buying outside the agency is declined
+    # by the exemption tests (lines 198-201), not by the lowest-fare rule, so there only the exemption code is accepted.
+    reasons, notes = ([*extras] if extras else [ReasonCode.LOWEST_FARE]), []
+    if extras and (trip.wants_refundable or trip.requested_airline):
+        raise ValueError("an outside quote beside another declined wish is not modelled")
     if trip.wants_refundable:
         reasons.append(ReasonCode.REFUNDABLE_FARE_NOT_ALLOWED)
         notes.append("lowest logical fares are non-refundable penalty tickets (line 114)")
@@ -412,7 +418,7 @@ def business(trip, usable, coach, international):
                           f"Lines 399-402 and 423-427: {numbers}; the traveller pays all of the difference over "
                           "coach, so business is bought on either reading of the 110% words.")
         if pays * 100 < fare * 100 - COACH_PERCENT * low:
-            return answer(Decision.BOOK, coach, [ReasonCode.UPGRADE_NOT_ELIGIBLE, ReasonCode.LOWEST_FARE,
+            return answer(Decision.BOOK, coach, [ReasonCode.UPGRADE_NOT_ELIGIBLE,
                                                  ReasonCode.LONG_FLIGHT_CONDITION_NOT_MET], [Approver.NONE],
                           [Clause.AIR],
                           f"Lines 423-427: {numbers}, over 110%, and the traveller will not pay even the part above "
@@ -426,7 +432,9 @@ def business(trip, usable, coach, international):
     if pays >= fare - low:
         return answer(Decision.BOOK, want, [ReasonCode.TRAVELER_PAYS_UPGRADE], [Approver.NONE], [Clause.AIR],
                       f"Lines 399-402: {numbers}; the traveller pays the difference ({fare - low} cents, up to {pays}).")
-    reasons, clauses = [ReasonCode.UPGRADE_NOT_ELIGIBLE, ReasonCode.LOWEST_FARE], [Clause.AIR]
+    # The cabin asked for is declined: the reason says why (task instructions). The ground is line 402's ban on
+    # upgrades at University expense (and lines 423-427), so LOWEST_FARE is not accepted.
+    reasons, clauses = [ReasonCode.UPGRADE_NOT_ELIGIBLE], [Clause.AIR]
     why = f"Lines 399-402: {numbers}; the traveller pays only {pays} cents of the {fare - low}-cent difference"
     if international:
         reasons.append(ReasonCode.LONG_FLIGHT_CONDITION_NOT_MET)
@@ -456,7 +464,7 @@ def premium(trip, usable, coach, international):
                       f"Lines 399-402: {numbers}; the traveller pays the difference.")
     seat = signed(trip, ApprovalSubject.PREFERRED_SEAT, {Approver.SUPERVISOR_OR_FISCAL_AUTHORITY})
     if not seat:
-        return answer(Decision.BOOK, coach, [ReasonCode.UPGRADE_NOT_ELIGIBLE, ReasonCode.LOWEST_FARE], [Approver.NONE],
+        return answer(Decision.BOOK, coach, [ReasonCode.UPGRADE_NOT_ELIGIBLE], [Approver.NONE],
                       [Clause.AIR, Clause.DEFINITIONS],
                       f"Lines 399-402 and 428-433: {numbers}; the traveller does not pay it and no preferred-seat "
                       "approval is on file, so coach on either reading.")

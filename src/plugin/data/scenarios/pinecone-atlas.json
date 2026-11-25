@@ -108,8 +108,7 @@
       "ECONOMY"
     ],
     "reason_codes": [
-      "AGENCY_EXEMPTION_NOT_MET",
-      "LOWEST_FARE"
+      "AGENCY_EXEMPTION_NOT_MET"
     ],
     "approvers": [
       "NONE",
