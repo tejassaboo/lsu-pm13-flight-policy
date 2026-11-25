@@ -1,5 +1,7 @@
 # LSU PM-13 Flight Policy
 
+**Source of the handbook:** https://www.lsu.edu/administration/policies/pmfiles/pm-13.pdf. The agent reads it verbatim (bundled at `src/plugin/data/policy.txt`); flights, fares and trips are synthetic.
+
 **No affiliation with Louisiana State University.** The handbook is LSU System Permanent Memorandum 13 (PM-13),
 *University Travel* (policy digest last revised July 2, 2026; Appendix I effective October 1, 2026; Appendices A
 and B dated July 1, 2026 - June 30, 2027), a public university-system document, bundled verbatim for research.
